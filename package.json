@@ -1,6 +1,6 @@
 {
     "name": "ct-boilerplate-react",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A boilerplate for React with Webpack, Babel and Sass.",
     "author": "Calvin Tiley",
     "license": "ISC",
