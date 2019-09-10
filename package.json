@@ -1,0 +1,70 @@
+{
+    "name": "ct-boilerplate-react",
+    "version": "1.0.0",
+    "description": "A boilerplate for React with Webpack, Babel and Sass.",
+    "author": "Calvin Tiley",
+    "license": "ISC",
+    "keywords": [
+        "React",
+        "Boilerplate",
+        "Sass",
+        "Webpack",
+        "Babel"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "prod": "webpack",
+        "dev": "webpack-dev-server",
+        "start": "npm run dev",
+        "test": "jest",
+        "test:unit": "jest unit",
+        "test:integration": "jest integration"
+    },
+    "jest": {
+        "transform": {
+            ".*": "<rootDir>/node_modules/babel-jest"
+        },
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "jsx"
+        ],
+        "moduleNameMapper": {
+            "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "EmptyModule"
+        },
+        "transformIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "unmockedModulePathPatterns": [
+            "<rootDir>/node_modules/react",
+            "<rootDir>/node_modules/react-dom",
+            "<rootDir>/node_modules/react-addons-test-utils",
+            "<rootDir>/EmptyModule.js"
+        ]
+    },
+    "dependencies": {
+        "babel-jest": "^24.9.0",
+        "css-loader": "^3.2.0",
+        "file-loader": "^4.2.0",
+        "html-webpack-plugin": "^3.2.0",
+        "jest": "^24.9.0",
+        "node-sass": "^4.12.0",
+        "prop-types": "^15.7.2",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "sass-loader": "^8.0.0",
+        "style-loader": "^1.0.0",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "url-loader": "^2.1.0",
+        "webpack": "^4.39.3",
+        "webpack-cli": "^3.3.8",
+        "webpack-dev-server": "^3.8.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.6.0",
+        "@babel/preset-env": "^7.6.0",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.6",
+        "react-test-renderer": "^16.9.0"
+    }
+}
