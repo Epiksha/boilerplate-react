@@ -4,10 +4,19 @@ import '../scss/general.scss';
 import Example from '../components/Example/Example';
 
 class App extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            title: 'Hello',
+        };
+    }
+
     render() {
+        const { title } = this.state;
         return (
             <div className="App">
-                <Example />
+                <Example title={title} />
             </div>
         );
     }
