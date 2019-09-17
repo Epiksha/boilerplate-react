@@ -1,8 +1,11 @@
-Title: ct-boilerplate-react
+*Calvin's React Boilerplate*
 
-Description: This is a basic boilerplate for React to get any developers up and running from the outset, as well as helping newer developers to get familiar with the different technologies in the JavaScript ecosystem. React is used as a library (though I would argue more of a framework), with Webpack transpiling JSX down to good old fashioned JavaScript, along with ES6 Babel integration so that all modern JavaScript code is transpiled down for older browsers. Testing has been configured and is possible with Jest. ESLint has also been included with the AirBnb configuration to standardise your code further. Additionally, Sass will be compiled down to CSS at runtime.
+**Description**
 
-Scripts:
+This is a basic boilerplate for React to get any developers up and running from the outset, as well as helping newer developers to get familiar with the different technologies in the JavaScript ecosystem. React is used as a library (though I would argue more of a framework), with Webpack transpiling JSX down to good old fashioned JavaScript, along with ES6 Babel integration so that all modern JavaScript code is transpiled down for older browsers. Testing has been configured and is possible with Jest. ESLint has also been included with the AirBnb configuration to standardise your code further. Additionally, Sass will be compiled down to CSS at runtime.
+
+**Scripts**
+
 `setup`: To get started, all you need to do is run `npm run setup` (npm comes with node so if you don't have it, visit https://nodejs.org/ to install the package and run the aforementioned script in your command line). This will run `npm install` for you (alternatively, it may be quicker just to run `npm install itself`!).
 
 `dev`: To build your development environment and run your code locally, run `npm run dev` from your command line. This will leverage the `webpack-dev-server` package which will build your files on the fly and serve them to your browser for you (avoiding clutter of production files when they are not yet needed).
@@ -14,10 +17,12 @@ Scripts:
 `test`: To begin a test of your files, simply run `npm test` (similar to `start` npm allows you to omit the `run` part on a `test` script). Testing is important to ensure that all of your files and variables are behaving the way they should be.
 
 Additionally, Jest provides an option for solely unit testing as well as independent integration testing. The scripts have been included as follows:
+
 `npm run test:unit`
+
 `npm run test:integration`
 
-How It All Works
+**How It All Works**
 
 Webpack is defined as a module bundler, though it has evolved and branched off somewhat. Webpack now allows you to perform a variety of options, such as using the JavaScript compiler Babel to compile ES6+ or JSX to vanilla JavaScript, using loaders to transpile Sass/SCSS to plain CSS, as well as import such files into JavaScript files (omitting the need for a base 'style.scss' file). In addition, Webpack also provides a host of optimisation tools and configuration options out of the box (while the community has provided a variety of other useful options).
 
@@ -48,6 +53,7 @@ When production is run, the JavaScript file that is output to the `dist` folder 
 
 Finally, when the production script is running, the HTMLWebpackPlugin (specified in the `plugins` object) will tak whatever template you've passed to it (in this case `template.html` in the `src` folder) and create an `index.html` file, which contains a div with an id of `root`, which `index.js` will render the React DOM to, along with the contents of `App.js`.
 
+**SCSS**
 The paradigm for the SASS files is that there are global files not specific to any one component for the following:
 
 - Default Styling for common elements
@@ -59,6 +65,10 @@ The paradigm for the SASS files is that there are global files not specific to a
 
 All of these files are ultimately imported into the `general.scss` file. There is a commented section under these imports for the stylesheets from your individual components, which can be kept in the component folders themselves or within the components folder already available in the `scss` folder.
 
+**Testing**
+
 You can build tests within the `tests` folder, which has been separated with `integration` and `unit` subfolders, to make the two test scripts easier to use.
+
+**Conclusion**
 
 If you like this boilerplate, please feel free to give it a star, I won't hold it against you! :)
