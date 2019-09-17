@@ -48,7 +48,7 @@ module.exports = {
             {
                 test: /\.gif$/,
                 loader: 'url-loader',
-            }
+            },
         ],
     },
     plugins: [
