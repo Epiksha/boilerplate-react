@@ -1,21 +1,15 @@
-import React, { Component } from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Example extends Component {
-    constructor() {
-        super();
+const Example = ({ title }) => (
+    <form>
+        <h1>{title}</h1>
+    </form>
+);
 
-        this.state = {
-            title: "Hello"
-        };
-    }
-
-    render() {
-        return (
-            <form>
-                <h1>{this.state.title}</h1>
-            </form>
-        );
-    }
+Example.propTypes = {
+    title: PropTypes.string.isRequired,
 };
+
 
 export default Example;
