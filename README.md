@@ -6,7 +6,7 @@ This is a basic boilerplate for React to get any developers up and running from 
 
 **Scripts**
 
-`setup`: To get started, all you need to do is run `npm run setup` (npm comes with node so if you don't have it, visit https://nodejs.org/ to install the package and run the aforementioned script in your command line). This will run `npm install` for you (alternatively, it may be quicker just to run `npm install itself`!).
+`setup`: To get started, all you need to do is run `npm run setup` (npm comes with node so if you don't have it, visit https://nodejs.org/ to install the package and run the aforementioned script in your command line). This will run `npm install` for you (alternatively, it may be quicker just to run `npm install` itself!).
 
 `dev`: To build your development environment and run your code locally, run `npm run dev` from your command line. This will leverage the `webpack-dev-server` package which will build your files on the fly and serve them to your browser for you (avoiding clutter of production files when they are not yet needed).
 
