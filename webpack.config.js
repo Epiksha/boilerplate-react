@@ -42,7 +42,7 @@ module.exports = {
                     ],
             },
             {
-                test: /\.(ttf|eot|svg)$/,
+                test: /\.(ttf|eot|svg|jpe?g|png)$/i,
                 loader: 'file-loader',
             },
             {
