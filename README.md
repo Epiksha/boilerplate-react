@@ -23,6 +23,7 @@ Additionally, Jest provides an option for solely unit testing as well as indepen
 `npm run test:integration`
 
 **React Router**
+
 The entire app is wrapped in `BrowserRouter` in `index.js`. This is ensure we can link to other pages in the `Header` and `Footer` components with ease, without having to place them on every page.
 
 Routes, or pages, go in the routes folder. Each one of these routes is defined in `App.js` in the `Switch` wrapper.
