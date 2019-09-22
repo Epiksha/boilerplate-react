@@ -22,7 +22,12 @@ Additionally, Jest provides an option for solely unit testing as well as indepen
 
 `npm run test:integration`
 
-**How It All Works**
+**React Router**
+The entire app is wrapped in `BrowserRouter` in `index.js`. This is ensure we can link to other pages in the `Header` and `Footer` components with ease, without having to place them on every page.
+
+Routes, or pages, go in the routes folder. Each one of these routes is defined in `App.js` in the `Switch` wrapper.
+
+**Webpack**
 
 Webpack is defined as a module bundler, though it has evolved and branched off somewhat. Webpack now allows you to perform a variety of options, such as using the JavaScript compiler Babel to compile ES6+ or JSX to vanilla JavaScript, using loaders to transpile Sass/SCSS to plain CSS, as well as import such files into JavaScript files (omitting the need for a base 'style.scss' file). In addition, Webpack also provides a host of optimisation tools and configuration options out of the box (while the community has provided a variety of other useful options).
 
@@ -54,6 +59,7 @@ When production is run, the JavaScript file that is output to the `dist` folder 
 Finally, when the production script is running, the HTMLWebpackPlugin (specified in the `plugins` object) will tak whatever template you've passed to it (in this case `template.html` in the `src` folder) and create an `index.html` file, which contains a div with an id of `root`, which `index.js` will render the React DOM to, along with the contents of `App.js`.
 
 **SCSS**
+
 The paradigm for the SASS files is that there are global files not specific to any one component for the following:
 
 - Default Styling for common elements
@@ -67,7 +73,9 @@ All of these files are ultimately imported into the `general.scss` file. There i
 
 **Testing**
 
-You can build tests within the `tests` folder, which has been separated with `integration` and `unit` subfolders, to make the two test scripts easier to use.
+As is convention, there is a test in the example component folder itself. You can create tests anywhere in the project and use the `npm run test` to check all tests pass.
+
+Jest and Enzyme are configured both with in the `enzyme.config.js` folder and `package.json` under the `jest` key.
 
 **Conclusion**
 

@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import Home from '../routes/Home';
+import Contact from '../routes/Contact';
+
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+
 import '../scss/general.scss';
 
-import Example from '../components/Example/Example';
+const App = () => (
+    <>
+        <Header />
 
-class App extends Component {
-    constructor() {
-        super();
+        <Switch>
+            <Route exact path="/contact" component={Contact} />
+            <Route path="/" component={Home} />
+        </Switch>
 
-        this.state = {
-            title: 'Hello',
-        };
-    }
-
-    render() {
-        const { title } = this.state;
-        return (
-            <div className="App">
-                <Example title={title} />
-            </div>
-        );
-    }
-}
+        <Footer />
+    </>
+);
 
 export default App;

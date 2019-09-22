@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Example = ({ title }) => (
+const ExampleSlide = ({ title }) => (
     <form>
         <h1>{title}</h1>
     </form>
 );
 
-Example.propTypes = {
+ExampleSlide.propTypes = {
     title: PropTypes.string.isRequired,
 };
 
-
-export default Example;
+export default ExampleSlide;
