@@ -30,13 +30,13 @@ Routes, or pages, go in the routes folder. Each one of these routes is defined i
 
 **Webpack**
 
-Webpack is defined as a module bundler, though it has evolved and branched off somewhat. Webpack now allows you to perform a variety of options, such as using the JavaScript compiler Babel to compile ES6+ or JSX to vanilla JavaScript, using loaders to transpile Sass/SCSS to plain CSS, as well as import such files into JavaScript files (omitting the need for a base 'style.scss' file). In addition, Webpack also provides a host of optimisation tools and configuration options out of the box (while the community has provided a variety of other useful options).
+Webpack is defined as a module bundler, though it has evolved and branched off somewhat. Webpack now allows you to perform a variety of options, such as using the JavaScript compiler Babel to compile ES6+ or JSX to vanilla JavaScript, using loaders to transpile Sass/SCSS to plain CSS, as well as import such files into JavaScript files (omitting the need for a base `style.scss` file). In addition, Webpack also provides a host of optimisation tools and configuration options out of the box (while the community has provided a variety of other useful options).
 
-Once Webpack has been installed, it will automatically look for 'webpack.config.js'. This file, as the name implies, is responsible for determing which `.js` file Webpack will use as an entrypoint to begin the optimisation/parsing process, where the files will be output to, what loaders will be used (manipulating code e.g. ES6 and SCSS to provide the desired result) and any additional plugins that can be used. Moreover, the 'webpack.config.js' in this repo has a `devServer` block, which the `webpack-dev-server` package uses to setup the dev environment (hence why the `dev` script runs `webpack-dev-server` while the `prod` script simply runs `webpack`).
+Once Webpack has been installed, it will automatically look for `webpack.config.js`. This file, as the name implies, is responsible for determing which `.js` file Webpack will use as an entrypoint to begin the optimisation/parsing process, where the files will be output to, what loaders will be used (manipulating code e.g. ES6 and SCSS to provide the desired result) and any additional plugins that can be used. Moreover, the `webpack.config.js` in this repo has a `devServer` block, which the `webpack-dev-server` package uses to setup the dev environment, refreshing after any changes (hence why the `dev` script runs `webpack-dev-server` while the `prod` script simply runs `webpack`).
 
 Webpack, after some configuration, will go through all of the files in your local directory and test to see what the file extension of each file is.
 
-For example, the first rule in the `rules` object of our webpack.config.js is as follows:
+For example, the first rule in the `rules` object of our `webpack.config.js` is as follows:
 
 ```js
     {
@@ -57,7 +57,7 @@ To put it simply, we defined each rule to test for a certain type of file and ma
 
 When production is run, the JavaScript file that is output to the `dist` folder is run through `UglifyJs`, which is specified in the `optimization` object in `webpack.config.js`. This removes all needless spaces and characters to reduce file size and get it ready to be served to users.
 
-Finally, when the production script is running, the HTMLWebpackPlugin (specified in the `plugins` object) will tak whatever template you've passed to it (in this case `template.html` in the `src` folder) and create an `index.html` file, which contains a div with an id of `root`, which `index.js` will render the React DOM to, along with the contents of `App.js`.
+Finally, when the production script is running, the HTMLWebpackPlugin (specified in the `plugins` object) will take whatever template you've passed to it (in this case `template.html` in the `src` folder) and create an `index.html` file, which contains a div with an id of `root`, which `index.js` will render the React DOM to, along with the contents of `App.js`.
 
 **SCSS**
 
@@ -74,9 +74,9 @@ All of these files are ultimately imported into the `general.scss` file. There i
 
 **Testing**
 
-As is convention, there is a test in the example component folder itself. You can create tests anywhere in the project and use the `npm run test` to check all tests pass.
+As is convention, there is a test in the Example component folder itself. You can create tests anywhere in the project and use the `npm run test` to check all tests pass.
 
-Jest and Enzyme are configured both with in the `enzyme.config.js` folder and `package.json` under the `jest` key.
+Jest and Enzyme are configured both within `enzyme.config.js` and `package.json` (under the `jest` key).
 
 **Conclusion**
 
