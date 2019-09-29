@@ -44,10 +44,14 @@
             "<rootDir>/node_modules/react-addons-test-utils",
             "<rootDir>/EmptyModule.js"
         ],
-        "setupFilesAfterEnv": ["<rootDir>/enzyme.config.js"]
+        "setupFilesAfterEnv": [
+            "<rootDir>/enzyme.config.js"
+        ]
     },
     "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
         "babel-jest": "^24.9.0",
+        "breakpoint-sass": "^2.7.1",
         "css-loader": "^3.2.0",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
@@ -72,6 +76,7 @@
         "@babel/preset-env": "^7.6.0",
         "@babel/preset-react": "^7.0.0",
         "@types/jest": "^24.0.18",
+        "autoprefixer": "^9.6.1",
         "babel-eslint": "^10.0.3",
         "babel-loader": "^8.0.6",
         "eslint": "^6.1.0",
@@ -82,6 +87,17 @@
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-react": "^7.14.3",
         "eslint-plugin-react-hooks": "^1.7.0",
+        "postcss-loader": "^3.0.0",
         "react-test-renderer": "^16.9.0"
-    }
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "last 2 version",
+        "not dead",
+        "iOS >= 9"
+    ]
 }

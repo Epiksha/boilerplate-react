@@ -12,7 +12,7 @@ This is a basic boilerplate for React to get any developers up and running from 
 
 `start`: This simply run the dev script for you. Because npm allows any start script to omit the `run` aspect of the script, simply write `npm start` in the console and the `dev` script will be fired.
 
-`prod`: When your files are ready for production, you can run `npm run prod`. This will compile all your JavaScript and Sass into code compatible with older browsers, while generating an 'index.html' file for you. These files will be placed into a newly created 'dist' folder, which you can do with as you please.
+`prod`: When your files are ready for production, you can run `npm run prod`. This will compile all your JavaScript and Sass into code compatible with older browsers, while generating an `index.html` file for you. These files will be placed into a newly created `dist` folder, which you can do with as you please.
 
 `test`: To begin a test of your files, simply run `npm test` (similar to `start` npm allows you to omit the `run` part on a `test` script). Testing is important to ensure that all of your files and variables are behaving the way they should be.
 
@@ -30,7 +30,7 @@ Routes, or pages, go in the routes folder. Each one of these routes is defined i
 
 **Webpack**
 
-Webpack is defined as a module bundler, though it has evolved and branched off somewhat. Webpack now allows you to perform a variety of options, such as using the JavaScript compiler Babel to compile ES6+ or JSX to vanilla JavaScript, using loaders to transpile Sass/SCSS to plain CSS, as well as import such files into JavaScript files (omitting the need for a base `style.scss` file). In addition, Webpack also provides a host of optimisation tools and configuration options out of the box (while the community has provided a variety of other useful options).
+[Webpack](https://webpack.js.org/ "Webpack") is defined as a module bundler, though it has evolved and branched off somewhat. Webpack now allows you to perform a variety of options, such as using the JavaScript compiler [Babel](https://babeljs.io/ "Babel") to compile ES6+ or JSX to vanilla JavaScript, using loaders to transpile Sass/SCSS to plain CSS, as well as import such files into JavaScript files (omitting the need for a base `style.css` file). In addition, Webpack also provides a host of optimisation tools and configuration options out of the box (while the community has provided a variety of other useful options).
 
 Once Webpack has been installed, it will automatically look for `webpack.config.js`. This file, as the name implies, is responsible for determing which `.js` file Webpack will use as an entrypoint to begin the optimisation/parsing process, where the files will be output to, what loaders will be used (manipulating code e.g. ES6 and SCSS to provide the desired result) and any additional plugins that can be used. Moreover, the `webpack.config.js` in this repo has a `devServer` block, which the `webpack-dev-server` package uses to setup the dev environment, refreshing after any changes (hence why the `dev` script runs `webpack-dev-server` while the `prod` script simply runs `webpack`).
 
@@ -55,7 +55,7 @@ For example, the first rule in the `rules` object of our `webpack.config.js` is 
 
 To put it simply, we defined each rule to test for a certain type of file and manipulate it somehow. `babel-loader` is used in conjunction with `@babel/core`, `@babel/preset-env`, `@babel/preset-react` and `babel-eslint` to complete all transpiling on JavaScript files so that we don't have to. To define further config so that Babel knows which presets to use, we define a `.babelrc` file in our root directory which `babel-loader` will look for and build the output code accordingly. To standardise our code and ensure it is keeping up with web standards and best practices, ESLint has been configured. When you run dev you will see a number of errors pop up which will inform you of any issues to do with your code. Airbnb's rules are used as guidelines as they are arguably the most commonly used and clearly-defined rules for ESLint around. Similar to Babel, the `.eslintrc` file holds all relevant config for ESLint.
 
-When production is run, the JavaScript file that is output to the `dist` folder is run through `UglifyJs`, which is specified in the `optimization` object in `webpack.config.js`. This removes all needless spaces and characters to reduce file size and get it ready to be served to users.
+When production is run, the JavaScript file that is output to the `dist` folder is parsed with [UglifyJs](https://www.npmjs.com/package/uglify-js "UglifyJS"), which is specified in the `optimization` object in `webpack.config.js`. This removes all needless spaces and characters to reduce file size and get it ready to be served to users.
 
 Finally, when the production script is running, the HTMLWebpackPlugin (specified in the `plugins` object) will take whatever template you've passed to it (in this case `template.html` in the `src` folder) and create an `index.html` file, which contains a div with an id of `root`, which `index.js` will render the React DOM to, along with the contents of `App.js`.
 
@@ -72,11 +72,17 @@ The paradigm for the SASS files is that there are global files not specific to a
 
 All of these files are ultimately imported into the `general.scss` file. There is a commented section under these imports for the stylesheets from your individual components, which can be kept in the component folders themselves or within the components folder already available in the `scss` folder.
 
+Standard styling is present, as can be seen in `_defaults.scss`, `_variables.scss` and `_mixins.scss`. This is filled with helpful code to get started quicker, as well as load fonts in easily.
+
+[Breakpoint-Sass](http://breakpoint-sass.com "Breakpoint Sass Website") has been included, to help maintain cleaner code when defining breakpoints (values provided to the mixin are mobile-first).
+
+Additionally, [PostCSS](https://postcss.org/ "PostCSS")'s [Autoprefixer](https://github.com/postcss/autoprefixer "Autoprefixer") has been used to allow you to develop with modern styling while supporting evergreen browsers down to IE11.
+
 **Testing**
 
-As is convention, there is a test in the Example component folder itself. You can create tests anywhere in the project and use the `npm run test` to check all tests pass.
-
 Jest and Enzyme are configured both within `enzyme.config.js` and `package.json` (under the `jest` key).
+
+As is convention, there is a test in the Example component folder itself. You can create tests anywhere in the project and use the `npm run test` to check all tests pass.
 
 **Conclusion**
 

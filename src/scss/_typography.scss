@@ -1,0 +1,37 @@
+@include addFont('Roboto', 'Roboto-Regular', normal);
+@include addFont('Roboto', 'Roboto-Italic', normal, italic);
+@include addFont('Roboto', 'Roboto-Bold', bold);
+@include addFont('Roboto', 'Roboto-BoldItalic', bold, italic);
+@include addFont('Roboto', 'Roboto-Light', lighten);
+@include addFont('Roboto', 'Roboto-LightItalic', lighten, italic);
+
+body {
+    font-family: 'Roboto';
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 0.75rem;
+}
+
+h6 {
+    font-size: 0.5rem;
+}
+
+a, p {
+    font-size: 0.75rem;
+}

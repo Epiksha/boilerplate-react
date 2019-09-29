@@ -9,7 +9,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        contentBase: path.join(__dirname, 'media'),
+        contentBase: path.join(__dirname, 'assets'),
         compress: true,
         port: 3000,
     },
@@ -38,11 +38,12 @@ module.exports = {
                 use: [
                         'style-loader',
                         'css-loader',
+                        'postcss-loader',
                         'sass-loader',
                     ],
             },
             {
-                test: /\.(ttf|eot|svg|jpe?g|png)$/i,
+                test: /\.(woff|ttf|eot|svg|jpe?g|png)$/i,
                 loader: 'file-loader',
             },
             {
