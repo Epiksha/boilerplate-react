@@ -20,22 +20,28 @@ module.exports = {
                 ]
             },
             {
+                test: /\.html$/,
+                loader: 'html-loader'
+            },
+            {
+                test: /\.(woff|ttf|eot|svg|jpe?g|png)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: "[name].[hash].[ext]",
+                        outputPath: 'assets/'
+                    }
+                }
+            },
+            {
                 test: /\.scss$/,
-                exclude: /(node_modules)/,
+                exclude: /node_modules/,
                 use: [
                     'style-loader',
                     'css-loader',
                     'postcss-loader',
                     'sass-loader'
                 ]
-            },
-            {
-                test: /\.(woff|ttf|eot|svg|jpe?g|png)$/i,
-                loader: 'file-loader'
-            },
-            {
-                test: /\.gif$/,
-                loader: 'url-loader'
             }
         ]
     }

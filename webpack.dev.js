@@ -11,8 +11,6 @@ module.exports = merge(common, {
     },
 
     devServer: {
-        contentBase: join(__dirname, 'assets'),
-        compress: true,
         port: 3000
     }
 });
