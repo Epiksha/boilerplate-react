@@ -22,36 +22,14 @@
         "test:unit": "jest unit",
         "test:integration": "jest integration"
     },
-    "jest": {
-        "transform": {
-            ".*": "<rootDir>/node_modules/babel-jest"
-        },
-        "moduleFileExtensions": [
-            "js",
-            "json",
-            "jsx"
-        ],
-        "moduleNameMapper": {
-            "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "EmptyModule"
-        },
-        "transformIgnorePatterns": [
-            "/node_modules/"
-        ],
-        "unmockedModulePathPatterns": [
-            "<rootDir>/node_modules/react",
-            "<rootDir>/node_modules/react-dom",
-            "<rootDir>/node_modules/react-addons-test-utils",
-            "<rootDir>/EmptyModule.js"
-        ],
-        "setupFilesAfterEnv": [
-            "<rootDir>/enzyme.config.js"
-        ]
-    },
     "dependencies": {
+        "connected-react-router": "^6.5.2",
         "prop-types": "^15.7.2",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
-        "react-router-dom": "^5.0.1"
+        "react-redux": "^7.1.3",
+        "react-router-dom": "^5.0.1",
+        "redux": "^4.0.4"
     },
     "devDependencies": {
         "@babel/core": "^7.6.0",

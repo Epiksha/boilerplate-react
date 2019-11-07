@@ -1,4 +1,4 @@
-*Calvin's React Boilerplate*
+*Simple React Boilerplate*
 
 **Description**
 
