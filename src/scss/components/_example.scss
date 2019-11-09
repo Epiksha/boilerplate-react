@@ -1,0 +1,46 @@
+.example {
+    padding: $spacing;
+
+    text-align: center;
+
+    &__input {
+        display: block;
+        
+        width: 15rem;
+
+        margin: 0 auto $spacing auto;
+        padding: $spacing * 0.5;
+    
+        background-color: lighten($color1, 15%);
+        color: $color0;
+        border: solid 0.05rem $color0;
+        border-radius: 0.3em;
+
+        &:focus, &:visited, &:active {
+            outline: none;
+        }
+    }
+
+    &__button {
+        display: block;
+
+        margin: auto;
+        padding: #{$spacing * 0.5} $spacing;
+
+        background-color: lighten($color1, 10%);
+        color: $color2;
+        border: solid 0.075rem $color0;
+
+        font-weight: bold;
+    }
+
+    &__container {
+        margin-top: $spacing;
+        padding-top: $spacing * 2;
+
+        border-top: solid 0.05rem $color0;
+    }
+
+    &__text {
+    }
+}

@@ -17,6 +17,7 @@
     "scripts": {
         "start": "webpack-dev-server --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js",
+        "build-dev": "webpack --config webpack.dev.js",
         "setup": "npm install",
         "test": "jest",
         "test:unit": "jest unit",
@@ -29,7 +30,8 @@
         "react-dom": "^16.9.0",
         "react-redux": "^7.1.3",
         "react-router-dom": "^5.0.1",
-        "redux": "^4.0.4"
+        "redux": "^4.0.4",
+        "redux-thunk": "^2.3.0"
     },
     "devDependencies": {
         "@babel/core": "^7.6.0",
