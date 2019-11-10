@@ -4,8 +4,6 @@
 
 A basic boilerplate leveraging [Webpack](https://webpack.js.org/ "Webpack") to transpile React's JSX syntax to CommonJS code, while ES6+ features to be used such as newer variable types (const and let), async/await, classes and others. SCSS loaders have been implemented, as well as optimization for both production and development builds.
 
-In the heart of keeping things simple as the name implies, any kind of Redux setup has been omitted, though it should be relatively seamless to add in if needed.
-
 To get started, simply run `npm run setup` and `npm start` (if you don't have Node installed see [NPM's Website](https://www.npmjs.com/get-npm "NPM") to download NPM and read their documentation on getting started). Once complete, your project should be running on localhost:3000 in your browser.
 
 ## Scripts
