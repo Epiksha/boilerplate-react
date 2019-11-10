@@ -4,7 +4,7 @@
 
 A basic boilerplate leveraging [Webpack](https://webpack.js.org/ "Webpack") to transpile React's JSX syntax to CommonJS code, while ES6+ features to be used such as newer variable types (const and let), async/await, classes and others. SCSS loaders have been implemented, as well as optimization for both production and development builds.
 
-To get started, simply run `npm run setup` and `npm start` (if you don't have Node installed see [NPM's Website](https://www.npmjs.com/get-npm "NPM") to download NPM and read their documentation on getting started). Once complete, your project should be running on localhost:3000 in your browser.
+To get started, simply run `npm run setup` and `npm start` (if you don't have Node installed see [NPM's Website](https://www.npmjs.com/get-npm "NPM") to download NPM and read their documentation on getting started). Once complete, your project should be running on localhost:3000 in your browser. If you are using Google Chrome, you can install the [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en "React Dev Tools") and [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en "Redux DevTools") extensions to help with development, though other browser extensions are available as well.
 
 ## Scripts
 
@@ -30,8 +30,6 @@ This boilerplate's [Webpack](https://webpack.js.org/ "Webpack") configuration ca
 Images, fonts and scripts will get hashed as part of the production process for cache busting purposes. As a result, a static HTML file would not carry the correct references to assets and scripts, as the hashes will change as a result of each change in code. [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin "HTML Webpack Plugin") is used to overcome this setback by serving `index.html` (based on `src/template.html`) as part of the bundle to dynamically generate the relevant paths to files.
 
 All images are bundled using [file-loader](https://webpack.js.org/loaders/file-loader/ "file-loader").
-
-
 
 ### Optimization
 
@@ -115,4 +113,4 @@ Component-based styling should go in the `components` folder (see `_example.scss
 
 Jest and Enzyme are configured in their respective config files in the root of the directory (`enzyme.config.js` and `jest.config.js`).
 
-As is convention, there is a test in the Example component folder itself. You can create tests anywhere in the project and use `npm test` to check all tests pass.
+As is convention, there is a test file, `example.test.js` in the Example component folder itself. You can create tests anywhere in the project and use `npm test` to check all tests pass.
