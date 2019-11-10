@@ -31,9 +31,14 @@ body {
 
 .nav {
     position: absolute;
-    top: 50%;
-    right: $spacing;
+    top: 150%;
+    right: 50%;
     transform: translateY(-50%);
+
+    @include breakpoint($bp-sm) {
+        top: 50%;
+        right: $spacing;
+    }
 
     &__link {
         margin: 0 $spacing;

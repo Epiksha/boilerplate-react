@@ -2,11 +2,9 @@ import React from 'react';
 
 import Example from '../components/Example/Example';
 
-import ReactImg from '../assets/images/react.png';
-
 const Home = () => (
     <main className="home">
-        <img src={ReactImg} alt="React Logo" className="home__img" />
+        <div className="home__hero" />
         <Example />
     </main>
 );

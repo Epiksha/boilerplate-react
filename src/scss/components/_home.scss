@@ -3,7 +3,14 @@
         padding-bottom: 0;
     }
     
-    &__img {
+    &__hero {
+        height: 500px;
         width: 100%;
+
+        background-image: url('../assets/images/react.png');
+        background-color: lighten($color1, 13.5%);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

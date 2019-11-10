@@ -1,7 +1,7 @@
 import CHANGE_TEXT from './actions';
 
 const initialState = {
-    text: 'Connected to store',
+    text: 'Redux: Connected to store',
 };
 
 export default (state = initialState, action) => {

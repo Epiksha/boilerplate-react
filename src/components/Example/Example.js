@@ -18,7 +18,7 @@ const Example = ({ text, actions }) => {
             <button type="button" className="example__button" onClick={fireTextChange}>Change Text</button>
 
             <div className="example__container">
-                <h1 className="example__text">{`Redux: ${text}`}</h1>
+                <h1 className="example__text">{text}</h1>
             </div>
         </section>
     );
@@ -31,7 +31,7 @@ Example.propTypes = {
 };
 
 Example.defaultProps = {
-    text: 'Not connected to store',
+    text: 'Redux: Not connected to store',
 };
 
 // Store

@@ -3,12 +3,6 @@
 
     text-align: center;
 
-    @include breakpoint($bp-lg) {
-        position: absolute;
-        bottom: $spacing * 6;
-        left: $spacing * 1.5;
-    }
-
     &__input {
         display: block;
         
