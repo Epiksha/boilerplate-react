@@ -13,7 +13,7 @@ describe('Example Container Test', () => {
             shallow(
                 <Provider store={mockStore}>
                     <Example />;
-            </Provider>
+                </Provider>
             )
         );
     });
