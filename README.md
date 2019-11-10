@@ -50,8 +50,6 @@ All sass files are imported into `general.scss` which Webpack loads into JS to b
 
 [Breakpoint-Sass](http://breakpoint-sass.com "Breakpoint Sass Website") has been included, to help maintain cleaner code when defining breakpoints (values provided to the mixin are mobile-first).
 
-Additionally, [PostCSS](https://postcss.org/ "PostCSS")'s [Autoprefixer](https://github.com/postcss/autoprefixer "Autoprefixer") has been used to allow you to develop with modern styling while supporting evergreen browsers down to IE11.
-
 Other plugins for Webpack include:
 
 - UglifyJsPlugin
