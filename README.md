@@ -8,13 +8,15 @@ To get started, simply run `npm run setup` and `npm start` (if you don't have No
 
 ## Scripts
 
+`npm start`: Builds a dev environment using [Webpack Dev Server](https://github.com/webpack/webpack-dev-server "Webpack Dev Server").
+
+`npm test`: Tests your files using [Jest](https://jestjs.io/ "Jest") and [Enzyme](https://www.npmjs.com/package/enzyme "Enzyme").
+
 `npm run setup`: Installs the app (alternatively just use `npm install`).
 
-`npm start`: Builds a dev environment.
+`npm run build`: Builds using the production configuration, outputting your files to a dynamically generated `dist` folder.
 
-`build`: Builds using the production configuration, outputting your files to a dynamically generated `dist` folder.
-
-`test`: Tests your files using [Jest](https://jestjs.io/ "Jest") and [Enzyme](https://www.npmjs.com/package/enzyme "Enzyme").
+`npm run build:dev`: Builds using the development configuration, without using Webpack Dev Server.
 
 Additionally, Jest provides an option for unit and integration testing. The scripts have been included as follows:
 
@@ -107,7 +109,6 @@ All sass files are imported into `general.scss` which Webpack loads into JS to b
 Component-based styling should go in the `components` folder (see `_example.scss`);
 
 [Breakpoint-Sass](http://breakpoint-sass.com "Breakpoint Sass Website") has been included to help maintain cleaner code when defining breakpoints (values provided to the mixin use "min-width" by default to encourage the mobile-first paradigm).
-
 
 ## Testing
 
