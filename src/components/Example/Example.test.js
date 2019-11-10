@@ -8,13 +8,13 @@ import Example from './Example';
 const mockStore = configureMockStore()({});
 
 describe('Example Container Test', () => {
-   it('renders without crashing', () => {
-      expect(
-         shallow(
-            <Provider store={mockStore}>
-               <Example />;
+    it('renders without crashing', () => {
+        expect(
+            shallow(
+                <Provider store={mockStore}>
+                    <Example />;
             </Provider>
-         )
-      );
+            )
+        );
     });
 });
