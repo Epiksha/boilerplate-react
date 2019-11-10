@@ -91,7 +91,7 @@ As can be seen above, mapStateToProps takes the state that is currently held by 
 
 At the root of the `redux` folder lies `store.js`, which contains the store. `index.js` imports Provider from React Redux as well as `store.js`, the former wrapping the main App component and the latter being passed to it as a prop. `store.js` builds the Redux store by instantiating it with the `createStore` method of Redux itself, which takes the root reducer, `initialState` and middleware configuration using the `compose` method of Redux (the middleware in this case being [Redux Thunk](https://github.com/reduxjs/redux-thunk "Redux Thunk") to aid with side effects). 
 
-The root reducer, found in `src/redux`, will combine any reducers you create for your app (see `src/reducer.js` for reference), before exporting them to be used in `store.js`.
+The root reducer, found in `src/redux`, will combine any reducers you create for your app before exporting them to be used in `store.js`.
 
 ## SCSS
 
