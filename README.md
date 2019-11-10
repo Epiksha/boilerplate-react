@@ -47,7 +47,7 @@ While development solely uses HtmlWebpackPlugin to generate dynamic paths, produ
 
 Both development and production will use `sass-loader` and `css-loader` to compile SCSS down to CSS; however, development will also use `style-loader` to inject the CSS into the JavaScript bundle. Because this might result in a flicker where HTML is unstyled before the page load when the code is live, production omits style-loader and opts instead for a CSS file generated with [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/ "MiniCssExtractPlugin") which gets linked to at the top of `index.html`, before the content is loaded. [OptimizeCSSAssetsPlugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin "Optimize CSS Assets Plugin") will minify all CSS code during production.
 
-JavaScript is optimized and minified in production with [UglifyJs](https://www.npmjs.com/package/uglify-js, "UglifyJS"). Additionally, because JavaScript files are hashed based on code changes and are thus built with new names every time production builds, [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin "Clean Webpack Plugin") is used to remote all files from the last build.
+JavaScript is optimized and minified in production with [UglifyJs](https://www.npmjs.com/package/uglify-js, "UglifyJS"). Additionally, because JavaScript files are hashed based on code changes and are thus built with new names every time production builds, [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin "Clean Webpack Plugin") is used to remove all files from the last build.
 
 ## React Router
 
