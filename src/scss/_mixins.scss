@@ -1,12 +1,9 @@
-@mixin addFont ($name, $file, $weight, $style: normal) {
+@mixin addFont ($name, $file, $weight, $style, $extension) {
     @font-face {
         font-family: "#{$name}";
         font-weight: $weight;
         font-style: $style;
 
-        src: url("/fonts/#{$file}.eot");
-        src:
-            url("/fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
-            url("/fonts/#{$file}.ttf") format("truetype"),
+        src: url("../assets/fonts/#{$file}.#{$extension}");
     }
 }

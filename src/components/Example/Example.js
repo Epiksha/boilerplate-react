@@ -5,24 +5,33 @@ import PropTypes from 'prop-types';
 
 import changeText from '../../redux/Example/creators';
 
-const Example = ({ text }) => (
-    <section className="example">
-        <input type="text" className="example__input" />
-        <button type="button" className="example__button">Change Text</button>
+const Example = ({ text, actions }) => {
+    const fireTextChange = () => {
+        const newText = document.querySelector('.example__input').value;
 
-        <div className="example__container">
-            <h1 className="example__text">{text}</h1>
-        </div>
-    </section>
-);
+        actions.changeText(newText);
+    };
+
+    return (
+        <section className="example">
+            <input type="text" className="example__input" />
+            <button type="button" className="example__button" onClick={fireTextChange}>Change Text</button>
+
+            <div className="example__container">
+                <h1 className="example__text">{`Redux: ${text}`}</h1>
+            </div>
+        </section>
+    );
+};
 
 // Prop Validation
 Example.propTypes = {
     text: PropTypes.string,
+    actions: PropTypes.shape({ changeText: PropTypes.func }).isRequired,
 };
 
 Example.defaultProps = {
-    text: 'Not connected to state',
+    text: 'Not connected to store',
 };
 
 // Store

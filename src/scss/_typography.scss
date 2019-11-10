@@ -1,9 +1,9 @@
-@include addFont('Roboto', 'Roboto-Regular', normal);
-@include addFont('Roboto', 'Roboto-Italic', normal, italic);
-@include addFont('Roboto', 'Roboto-Bold', bold);
-@include addFont('Roboto', 'Roboto-BoldItalic', bold, italic);
-@include addFont('Roboto', 'Roboto-Light', lighten);
-@include addFont('Roboto', 'Roboto-LightItalic', lighten, italic);
+@include addFont('Roboto', 'Roboto-Regular', normal, normal, 'ttf');
+@include addFont('Roboto', 'Roboto-Italic', normal, italic, 'ttf');
+@include addFont('Roboto', 'Roboto-Bold', bold, normal, 'ttf');
+@include addFont('Roboto', 'Roboto-BoldItalic', bold, italic, 'ttf');
+@include addFont('Roboto', 'Roboto-Light', lighten, normal, 'ttf');
+@include addFont('Roboto', 'Roboto-LightItalic', lighten, italic, 'ttf');
 
 body {
     font-family: 'Roboto';

@@ -1,7 +1,7 @@
 import CHANGE_TEXT from './actions';
 
 const initialState = {
-    text: 'Connected to state',
+    text: 'Connected to store',
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
         case CHANGE_TEXT:
             return {
                 ...state,
-                action,
+                text: action.payload,
             };
         default:
             return state;
