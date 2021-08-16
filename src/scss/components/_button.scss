@@ -1,0 +1,68 @@
+@use 'sass:color';
+@use '../_abstracts.scss' as *;
+@use '../_mixins.scss' as *;
+
+.button {
+    text-align: center;
+
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+    color: $color2;
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+    transition: background-color 200ms, border 200ms;
+
+    &--primary {
+        padding: 1.5rem 2rem;
+        border: solid 0.1rem transparent;
+        border-radius: 2rem;
+
+        background-color: $color2;
+
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: 0.025rem;
+
+        &:hover,
+        &:focus {
+            background-color: $color2;
+        }
+
+        &.button--outline {
+            border: solid 0.1rem $color2;
+
+            background-color: transparent;
+
+            &:hover {
+                background-color: $color2;
+                border: solid 0.1rem $color0;
+            }
+        }
+    }
+
+    &--flat {
+        border-radius: 0;
+    }
+
+    &#{&}--icon {
+        display: flex;
+        align-items: center;
+        text-align: left;
+
+        .icon {
+            @include icon-dimensions(1.8rem);
+
+            & + * {
+                margin-left: 1rem;
+            }
+        }
+
+        & > span {
+            flex-grow: 1;
+        }
+    }
+}

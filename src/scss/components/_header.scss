@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.header {
+    text-align: center;
+
+    padding: 1rem 0;
+
+    background-color: $color2;
+    color: $color0;
+
+    line-height: 1;
+
+    &__title {
+        font-size: 3.2rem;
+    }
+}

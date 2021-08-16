@@ -1,0 +1,21 @@
+@mixin range-track() {
+    height: 0.2rem;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+
+    background-color: transparent;
+    
+    cursor: pointer;
+}
+
+@mixin range-thumb($thumbColor, $height: 1rem, $width: $height) {
+    height: 1.3rem;
+    width: 1.3rem;
+    border: none;
+    border-radius: 50%;
+
+    background-color: $thumbColor;
+
+    cursor: pointer;
+}

@@ -1,0 +1,42 @@
+@use 'sass:list';
+@use 'sass:string';
+
+@mixin add-formatted($source) {
+    @if list.length($formattedSources) == 0 {
+        $formattedSources: list.append($formattedSources, $source) !global;
+    } @else {
+        $formattedSources: list.append($formattedSources, $source, $separator: comma) !global;
+    }
+}
+
+$formattedSources: ();
+
+@mixin import($family, $sources, $style: normal, $weight: normal) {
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        font-display: swap;
+
+        @each $source in $sources {
+            $extension: string.slice($source, string.index($source, '.') + 1);
+
+            @if $extension == woff2 {
+                @include add-formatted(list.join((), resolve($source) format('woff2'), space));
+            } @else if $extension == woff {
+                @include add-formatted(list.join((), resolve($source) format('woff'), space));
+            } @else if $extension == ttf {
+                @include add-formatted(list.join((), resolve($source) format('truetype'), space));
+            } @else if $extension == eot {
+                src: resolve($source);
+                @include add-formatted(list.join((), resolve('#{$source}?#iefix') format('embedded-opentype'), space));
+            } @else {
+                @error 'import-font: Font extension invalid';
+            }
+        }
+
+        src: $formattedSources;
+
+        $formattedSources: () !global;
+    }
+}
