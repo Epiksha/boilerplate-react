@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ToggleProps {
     classes?: string;
     isChecked: boolean;

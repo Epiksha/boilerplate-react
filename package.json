@@ -12,7 +12,7 @@
         "test": "jest",
         "test:unit": "jest unit",
         "test:integration": "jest integration",
-        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "lint": "eslint '*/**/*.{js,ts,tsx}' --max-warnings 0",
         "typegen": "kea-typegen write ./src",
         "postinstall": "husky install"
     },
@@ -61,6 +61,7 @@
         "html-webpack-plugin": "^5.3.2",
         "husky": "^7.0.2",
         "kea-typegen": "^1.1.5",
+        "lint-staged": "^11.1.2",
         "postcss": "^8.3.8",
         "postcss-import": "^14.0.2",
         "postcss-loader": "^6.1.1",
