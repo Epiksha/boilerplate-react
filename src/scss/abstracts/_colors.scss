@@ -1,0 +1,13 @@
+@use 'sass:color';
+
+$color0: #ffffff;
+$color1: #000000;
+$color2: #192e42;
+$color3: #5ac09e;
+$color4: #7cc6fe;
+$color5: #f4faff;
+$color6: #8789c0;
+$color7: #cac8c8;
+$color8: #1fab71;
+
+$box-shadow-1: 0.2rem 0.2rem 1rem 0.2rem color.adjust($color1, $alpha: -0.9);

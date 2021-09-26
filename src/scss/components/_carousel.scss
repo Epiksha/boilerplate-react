@@ -1,0 +1,42 @@
+@use '../_abstracts.scss' as *;
+
+.carousel:focus {
+    outline: none;
+}
+
+.carousel__container {
+    overflow: hidden;
+    height: auto;
+    border: solid 0.2rem transparent;
+    border-radius: 1rem;
+    outline: none;
+
+    &:focus {
+        border: solid 0.2rem $color2;
+    }
+}
+
+.carousel__slide {
+    padding: 2rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $color0;
+}
+
+.carousel__index {
+    margin: 0 1.5rem;
+
+    color: $color0;
+
+    font-weight: bold;
+}
+
+.carousel__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 2rem;
+}

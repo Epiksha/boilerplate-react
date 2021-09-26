@@ -1,0 +1,40 @@
+@use '../_abstracts.scss' as *;
+
+$lineWidth: 0.4rem;
+
+.plus {
+    position: relative;
+
+    padding: 1.2rem;
+
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        border-radius: 0.5rem;
+
+        background-color: $color2;
+
+        transition: background-color $timing-1;
+    }
+
+    &__line--horizontal {
+        height: $lineWidth;
+        width: calc(100% - 0.4rem);
+    }
+    
+    &__line--vertical {
+        height: calc(100% - 0.4rem);
+        width: $lineWidth;
+
+        transition: transform $timing-1, opacity $timing-1, background-color $timing-1;
+
+        .accordion[open] & {
+            transform: translate(-50%, -50%) rotate(90deg);
+
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use 'sass:math';
+@use '../_abstracts.scss' as *;
+
+.grid {
+    display: grid;
+    column-gap: $grid-column-gap;
+    row-gap: $grid-row-gap;
+}
+
+@for $i from 1 through 12 {
+    @for $j from 1 through 12 {
+        .grid--#{$i}\/#{$j} {
+            grid-template-columns: repeat(#{math.div($j, $i)}, 1fr) !important;
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    @for $j from 1 through 12 {
+        @media (min-width: $mobile) {
+            .mobile\:grid--#{$i}\/#{$j} {
+                grid-template-columns: repeat(#{math.div($j, $i)}, 1fr) !important;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    @for $j from 1 through 12 {@media (min-width: $tablet) {
+            .tablet\:grid--#{$i}\/#{$j} {
+                grid-template-columns: repeat(#{math.div($j, $i)}, 1fr) !important;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    @for $j from 1 through 12 {
+        @media (min-width: $desktop) {
+            .desktop\:grid--#{$i}\/#{$j} {
+                grid-template-columns: repeat(#{math.div($j, $i)}, 1fr) !important;
+            }
+        }
+    }
+}
