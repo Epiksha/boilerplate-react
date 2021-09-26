@@ -34,14 +34,6 @@
         "url": "https://github.com/Epiksha/boilerplate-react/issues"
     },
     "homepage": "https://github.com/Epiksha/boilerplate-react#readme",
-    "commitlint": {
-        "extends": ["@commitlint/config-conventional"]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
     "devDependencies": {
         "@babel/cli": "^7.15.7",
         "@babel/core": "^7.15.5",
