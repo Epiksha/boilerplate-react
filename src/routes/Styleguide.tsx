@@ -29,7 +29,7 @@ interface InputInterface {
     type: string,
 }
 
-export default () => {
+export const Styleguide = (): JSX.Element => {
     // State
     const [isToggled, setIsToggled] = useState(false);
     const [sliderValue, setSliderValue] = useState(100);
@@ -382,3 +382,5 @@ export default () => {
         </main>
     );
 };
+
+export default Styleguide;

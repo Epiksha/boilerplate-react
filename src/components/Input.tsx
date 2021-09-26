@@ -13,9 +13,9 @@ interface InputProps {
     required?: boolean;
     type?: string;
     value: string|number;
-};
+}
 
-export default ({
+export const Input = ({
     autoComplete = '',
     classes = '',
     errors = [],
@@ -121,4 +121,6 @@ export default ({
 
         </fieldset>
     );
-}
+};
+
+export default Input;

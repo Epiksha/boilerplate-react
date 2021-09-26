@@ -5,9 +5,9 @@ interface CheckboxProps {
     classes?: string;
     handler: (isChecked: boolean) => void;
     label?: string;
-};
+}
 
-export default ({ classes, handler, label = '' }: CheckboxProps): JSX.Element => {
+export const Checkbox = ({ classes, handler, label = '' }: CheckboxProps): JSX.Element => {
     const [isChecked, setIsChecked] = useState(false);
 
     useEffect(() => {
@@ -41,3 +41,5 @@ export default ({ classes, handler, label = '' }: CheckboxProps): JSX.Element =>
         </label>
     );
 };
+
+export default Checkbox;

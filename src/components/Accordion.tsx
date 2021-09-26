@@ -7,9 +7,14 @@ interface AccordionProps {
     iconPosition?: string;
     title: string;
     children: ReactNode,
-};
+}
 
-export default ({ iconType, iconPosition = 'left', title, children }: AccordionProps): JSX.Element => (
+export const Accordion =  ({
+    iconType,
+    iconPosition = 'left',
+    title,
+    children
+}: AccordionProps): JSX.Element => (
     <details
         className={`
             ${iconType === 'plus' ? 'accordion--plus': ''}
@@ -48,3 +53,5 @@ export default ({ iconType, iconPosition = 'left', title, children }: AccordionP
         </div>
     </details>
 );
+
+export default Accordion;

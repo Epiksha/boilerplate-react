@@ -5,9 +5,9 @@ interface ImageProps {
     classes?: string;
     external?: boolean;
     name: string;
-};
+}
 
-export default ({name, alt = '', classes = '', external = false}: ImageProps): JSX.Element => {
+export const Image = ({name, alt = '', classes = '', external = false}: ImageProps): JSX.Element => {
     let importedImage;
 
     if (!external && name) {
@@ -26,4 +26,6 @@ export default ({name, alt = '', classes = '', external = false}: ImageProps): J
             className={`image ${classes ? classes : ''}`}
         />
     );
-}
+};
+
+export default Image;

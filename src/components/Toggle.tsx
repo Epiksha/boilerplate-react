@@ -1,13 +1,13 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 
 interface ToggleProps {
     classes?: string;
     isChecked: boolean;
     label?: string;
     handleToggle: () => void;
-};
+}
 
-export default ({ classes = '', isChecked, label, handleToggle }: ToggleProps): JSX.Element => (
+export const Toggle = ({ classes = '', isChecked, label, handleToggle }: ToggleProps): JSX.Element => (
     <label className={`toggle ${classes}`}>
         {label && <span className="toggle__text">{label}</span>}
 
@@ -25,3 +25,5 @@ export default ({ classes = '', isChecked, label, handleToggle }: ToggleProps): 
         </div>
     </label>
 );
+
+export default Toggle;

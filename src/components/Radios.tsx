@@ -5,9 +5,9 @@ interface RadiosProps {
     groupName: string;
     handler: (index: number) => void;
     radios: {id: string, isToggled: boolean, label: string}[];
-};
+}
 
-export default ({ classes, groupName, handler, radios }: RadiosProps): JSX.Element => (
+export const Radios = ({ classes, groupName, handler, radios }: RadiosProps): JSX.Element => (
     <form className={`radios ${classes ? classes : ''}`}>
         {radios?.map((radio, index) => {
             <label
@@ -36,3 +36,5 @@ export default ({ classes, groupName, handler, radios }: RadiosProps): JSX.Eleme
         })}
     </form>
 );
+
+export default Radios;

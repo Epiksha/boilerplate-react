@@ -7,9 +7,9 @@ interface RangeProps {
     handler: (value: number) => void;
     step?: number;
     value: number;
-};
+}
 
-export default ({
+export const Slider = ({
     classes,
     max = 100,
     min = 0,
@@ -36,3 +36,5 @@ export default ({
         />
     );
 };
+
+export default Slider;

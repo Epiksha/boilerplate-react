@@ -1,6 +1,6 @@
-export const capitalize = ([first, ...rest]: string) => first.toUpperCase() + rest.join('');
+export const capitalize = ([first, ...rest]: string): string => first.toUpperCase() + rest.join('');
 
-export const copyToClipboard = (text: string) => {
+export const copyToClipboard = (text: string): void => {
     const element = document.createElement('textarea');
 
     element.value = text;
@@ -15,7 +15,7 @@ export const copyToClipboard = (text: string) => {
     document.body.removeChild(element);
 };
 
-export const htmlToText = (html: string) => {
+export const htmlToText = (html: string): string|null => {
     const tempElement = document.createElement('textarea');
     
     tempElement.innerHTML = html;

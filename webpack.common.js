@@ -22,6 +22,20 @@ module.exports = {
         rules: [
             {
                 test: /\.[jt]sx?$/,
+                enforce: 'pre',
+                use: [
+                  {
+                    options: {
+                      eslintPath: require.resolve('eslint'),
+            
+                    },
+                    loader: require.resolve('eslint-loader'),
+                  },
+                ],
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.[jt]sx?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/, 
             },
