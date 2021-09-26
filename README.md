@@ -1,5 +1,12 @@
 # Simple React Boilerplate
 
+## Quick Setup
+
+* Run `yarn install`
+* Run `npx husky add .husky/commit-msg 'npx commitlint --edit $1'` to enable commit linting
+
+
+
 ## Description
 
 A basic boilerplate leveraging [Webpack](https://webpack.js.org/ "Webpack") to transpile React's JSX syntax to CommonJS code, while ES6+ features to be used such as newer variable types (const and let), async/await, classes and others. SCSS loaders have been implemented, as well as optimization for both production and development builds.
