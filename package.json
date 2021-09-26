@@ -1,42 +1,87 @@
 {
-  "name": "boilerplate-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "sass": "^1.37.5",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "boilerplate-react",
+    "version": "1.0.0",
+    "author": "Calvin Tiley",
+    "description": "A boilerplate for React",
+    "main": "index.js",
+    "scripts": {
+        "watch": "webpack serve --config webpack.development.js",
+        "build": "webpack --config webpack.production.js",
+        "build-dev": "webpack --config webpack.development.js",
+        "setup": "npm ci",
+        "test": "jest",
+        "test:unit": "jest unit",
+        "test:integration": "jest integration",
+        "typegen": "kea-typegen write ./src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Epiksha/boilerplate-react.git"
+    },
+    "keywords": [
+        "React",
+        "Boilerplate",
+        "Sass",
+        "Webpack",
+        "Babel",
+        "Jest",
+        "ESLint"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "sass-utilizer": "^3.2.7"
-  }
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Epiksha/boilerplate-react/issues"
+    },
+    "homepage": "https://github.com/Epiksha/boilerplate-react#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.15.7",
+        "@babel/core": "^7.15.5",
+        "@babel/preset-env": "^7.15.6",
+        "@babel/preset-react": "^7.14.5",
+        "@babel/preset-typescript": "^7.15.0",
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/config-conventional": "^13.1.0",
+        "@fullhuman/postcss-purgecss": "^4.0.3",
+        "@types/react": "^17.0.24",
+        "@types/react-dom": "^17.0.9",
+        "@types/react-redux": "^7.1.18",
+        "@types/react-router-dom": "^5.3.0",
+        "@types/webpack-env": "^1.16.2",
+        "add": "^2.0.6",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^6.3.0",
+        "css-minimizer-webpack-plugin": "^3.0.2",
+        "cssnano": "^5.0.8",
+        "html-loader": "^2.1.2",
+        "html-webpack-plugin": "^5.3.2",
+        "husky": "^7.0.2",
+        "kea-typegen": "^1.1.5",
+        "postcss": "^8.3.8",
+        "postcss-import": "^14.0.2",
+        "postcss-loader": "^6.1.1",
+        "postcss-preset-env": "^6.7.0",
+        "sass": "^1.42.1",
+        "sass-loader": "^12.1.0",
+        "sass-utilizer": "^3.2.7",
+        "style-loader": "^3.3.0",
+        "svg-sprite-loader": "^6.0.9",
+        "svgo": "^2.7.0",
+        "svgo-loader": "^3.0.0",
+        "ts-loader": "^9.2.6",
+        "typescript": "^4.4.3",
+        "webpack": "^5.54.0",
+        "webpack-cli": "^4.8.0",
+        "webpack-dev-server": "^4.3.0",
+        "webpack-merge": "^5.8.0",
+        "yarn": "^1.22.11"
+    },
+    "dependencies": {
+        "kea": "^2.4.10",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-hot-loader": "^4.13.0",
+        "react-redux": "^7.2.5",
+        "react-router-dom": "^5.3.0",
+        "redux": "^4.1.1",
+        "reselect": "^4.0.0"
+    }
 }

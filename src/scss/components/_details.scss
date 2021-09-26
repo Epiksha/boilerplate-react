@@ -1,0 +1,9 @@
+details summary {
+    &:first-of-type {
+        list-style-type: none;
+    }
+
+    &::marker {
+        display: none;
+    }
+}

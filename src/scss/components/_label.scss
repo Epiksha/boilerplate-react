@@ -1,0 +1,15 @@
+@use '../_abstracts.scss' as *;
+
+label {
+    color: $color1;
+
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+    transition: color $timing-1;
+
+    &.active {
+        color: $color2;
+    }
+}

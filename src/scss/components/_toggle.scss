@@ -1,0 +1,72 @@
+@use 'sass:color';
+@use '../_abstracts.scss' as *;
+
+.toggle {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    max-width: 10rem;
+
+    color: $color1;
+
+    text-transform: none;
+}
+
+.toggle__container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 2rem;
+
+    background-color: $color7;
+
+    pointer-events: none;
+    transition: background-size $timing-1;
+
+    &:after {
+        content: '';
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(calc(-100% + 1.9rem));
+
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+
+        background-color: $color3;
+
+        transition: transform $timing-1;
+    }
+}
+
+.toggle__text {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.toggle__handle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    box-sizing: border-box;
+    height: 2rem;
+    width: 2rem;
+    border: solid $color2 0.1rem;
+    border-radius: 50%;
+
+    background-color: $color2;
+
+    transition: transform $timing-1, background-color $timing-1;
+}

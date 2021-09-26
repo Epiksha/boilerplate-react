@@ -8,8 +8,8 @@
     $abstracts: meta.module-variables('abstracts');
     $variables: ();
 
-    @for $i from 1 through list.length(map.keys($abstracts)) {
-        $label: list.nth(map.keys($abstracts), $i);
+    @for $index from 1 through list.length(map.keys($abstracts)) {
+        $label: list.nth(map.keys($abstracts), $index);
 
         @if string.index($label, $stringMatch) {
             $variables: list.join($variables, map.get($abstracts, $label));

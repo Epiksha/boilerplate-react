@@ -1,0 +1,1 @@
+export { default as stringHelper } from './helpers/stringHelper';

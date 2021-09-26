@@ -1,0 +1,10 @@
+@use '../_abstracts.scss' as *;
+
+fieldset {
+    text-align: left;
+
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    outline: none;
+}
