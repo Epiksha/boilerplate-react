@@ -2,10 +2,9 @@
 
 ## Quick Setup
 
-* Run `yarn install`
+* Run `yarn install` or `npm install` to install dependencies
 * Run `npx husky add .husky/commit-msg 'npx commitlint --edit $1'` to enable commit linting
-
-
+* Run `yarn watch` or `npm run watch` to build your development environment
 
 ## Description
 
@@ -31,14 +30,6 @@ Additionally, Jest provides an option for unit and integration testing. The scri
 `npm run test:integration`
 
 ## Webpack
-
-### Setup
-
-This boilerplate's [Webpack](https://webpack.js.org/ "Webpack") configuration can be found in `webpack.common.js`, `webpack.dev.js` and `webpack.prod.js`. Webpack additionally leverages the configuration in `.babelrc` to configure [Babel's](https://babeljs.io/ "Babel") transpiling of newer JavaScript (ES6+) to CommonJS.
-
-Images, fonts and scripts will get hashed as part of the production process for cache busting purposes. As a result, a static HTML file would not carry the correct references to assets and scripts, as the hashes will change as a result of each change in code. [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin "HTML Webpack Plugin") is used to overcome this setback by serving `index.html` (based on `src/template.html`) as part of the bundle to dynamically generate the relevant paths to files.
-
-All images are bundled using [file-loader](https://webpack.js.org/loaders/file-loader/ "file-loader").
 
 ### Optimization
 
