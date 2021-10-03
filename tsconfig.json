@@ -25,6 +25,6 @@
         "target": "ES2021",
         "noImplicitAny": false
     },
-    "include": ["src/**/*", "postcss.config.js"],
+    "include": ["src/**/*", "postcss.config.js", "jest-setup.ts"],
     "exclude": ["node_modules/**/*", "staticfiles/**/*", "frontend/dist/**/*"]
 }

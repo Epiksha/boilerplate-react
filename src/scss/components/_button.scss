@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '../_abstracts.scss' as *;
+@use '../_variables.scss' as *;
 @use '../_mixins.scss' as *;
 
 .button {
@@ -66,14 +66,11 @@
 
     &--hamburger {
         position: relative;
-        height: 3.2rem;
+
         width: 3.2rem;
+        height: 3.2rem;
     
         transition: transform 50ms ease-in-out;
-
-        &:hover span {
-            background-color: $color2;
-        }
 
         > span {
             display: block;
@@ -106,6 +103,8 @@
         }
 
         &.active span {
+            background-color: $color2;
+
             &:first-child {
                 top: 1rem;
                 left: 50%;
@@ -151,34 +150,6 @@
 
         & > span {
             flex-grow: 1;
-        }
-    }
-
-    &--media {
-        line-height: 1.8rem;
-
-        &:hover .icon {
-            fill: $color2;
-
-            transform: scale(1.2);
-        }
-    }
-
-    &--center-play {
-        height: 6rem;
-        width: 6rem;
-        padding: 0;
-        border: solid 0.5rem $color0;
-        border-radius: 50%;
-
-        transition: border-color $timing-1;
-
-        &:hover {
-            border-color: $color2;
-
-            .icon {
-                fill: $color2;
-            }
         }
     }
 

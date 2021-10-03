@@ -1,0 +1,183 @@
+@use 'sass:color';
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.inputWrapper {
+    position: relative;
+}
+
+input, .input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.6rem 5rem 1.6rem 1.6rem;
+    border: solid 0.2rem color.scale($color2, $alpha: -60%);
+    border-radius: 0.4rem;
+    outline: none;
+
+    background-color: $color0;
+    color: $color1;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.025rem;
+
+    transition: border 200ms;
+
+    & + .icon,
+    & + .button--visible {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+    }
+
+    & + .icon,
+    & + .button--visible > .icon {
+        fill: color.scale($color2, $alpha: -60%);
+    }
+
+    &::placeholder {
+        color: color.adjust($color1, $alpha: -0.7);
+    }
+
+    &:focus {
+        border-color: $color2;
+
+        & + .icon,
+        & + .button--visible > .icon {
+            fill: $color2;
+        }
+    }
+
+    &:focus::placeholder {
+        color: transparent;
+    }
+
+    .error & {
+        border: solid 0.2rem $color2;
+
+        & + .icon,
+        & + .button--visible > .icon {
+            fill: $color2;
+        }
+    }
+}
+
+.input.input--checkbox {
+    position: absolute;
+    left: -999rem;
+
+    height: 1.8rem;
+    width: 1.8rem;
+    border: none;
+
+    opacity: 0;
+
+    &:checked ~ .checkbox__icon > div {
+        background-color: $color2;
+
+        svg {
+            fill: white;
+        }
+    }
+}
+
+input[type="radio"], .input.input--radio {
+    position: absolute;
+    left: -999rem;
+
+    opacity: 0;
+
+    &:checked + .radio__circle {
+        border: solid 0.2rem $color2;
+    }
+
+    &:checked + .radio__circle:after {
+        opacity: 1;
+    }
+}
+
+// Range
+input[type=range] {
+    -webkit-appearance: none;
+
+    height: 0.2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    
+    background-color: $color0;
+    background-image: linear-gradient(to right, $color2 100%, $color2);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    // Track Styling
+    &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+
+        @include input-range-track;
+    }
+
+    &::-moz-range-track {
+        @include input-range-track;
+    }
+
+    &::-ms-track {
+        @include input-range-track;
+    }
+
+    &::-ms-fill-lower {
+        @include input-range-track;
+    }
+    
+    &::-ms-fill-upper {
+        @include input-range-track;
+    }
+
+    // Thumb Styling
+    &::-webkit-slider-thumb {
+        @include input-range-thumb($color2, 1.3rem);
+
+        -webkit-appearance: none;
+        margin-top: -0.6rem; // Needed to position thumbs in Chrome
+    }
+    
+    &::-moz-range-thumb {
+        @include input-range-thumb($color2, 1.3rem);
+    }
+    
+    &::-ms-thumb {
+        @include input-range-thumb($color2, 1.3rem);
+    }
+}
+
+// Toggle
+.input.input--toggle {
+    overflow: hidden;
+    height: 2rem;
+    width: 4rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 2rem;
+
+    line-height: 2rem;
+    
+    opacity: 0;
+
+    &:checked {
+        & + .toggle__container:after {
+           transform: translateX(0);
+        }
+
+        & + .toggle__container > .toggle__handle {
+            transform: translate(calc(4rem - 100%), -50%);
+        }
+    }
+}

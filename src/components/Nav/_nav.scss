@@ -1,0 +1,74 @@
+@use 'sass:color';
+@use '../../scss/variables' as *;
+
+.nav {
+    &__list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+    
+        overflow: hidden;
+        width: 100%;
+        max-height: 0;
+
+        transition: max-height $timing-2;
+
+        .nav.active & {
+            max-height: 11.3rem;
+        }
+
+        @media (min-width: $tablet) {
+            display: flex;
+            align-items: center;
+
+            position: static;
+            max-height: 7.2rem;
+            width: auto;
+    
+            transition: none;
+        }
+    }
+
+    &__item {
+        width: 100%;
+
+        &:before {
+            display: none;
+        }
+
+        @media (min-width: $tablet) {
+            width: auto;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-align: center;
+        
+        padding: 2rem;
+        
+        background-color: $color8;
+        color: $color0;
+        
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        transition: color $timing-2;
+
+        .nav__item:not(:last-child) & {
+            border-bottom: solid 0.1rem $color5;
+        }
+
+        &:hover {
+            color: $color2;
+
+            text-decoration: none;
+        }
+
+        @media (min-width: $tablet) {
+            background-color: transparent;
+            color: $color3;
+        }
+    }
+}

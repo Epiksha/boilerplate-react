@@ -2,12 +2,12 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 
 // Route Imports
-import NotFound from './routes/NotFound';
-import Home from './routes/Home';
-import Styleguide from './routes/Styleguide';
+import NotFound from './routes/NotFound/NotFound';
+import Home from './routes/Home/Home';
+import Styleguide from './routes/Styleguide/Styleguide';
 
 // Component Imports
-import Header from './components/Header';
+import Header from './components/Header/Header';
 
 export const App = hot(_App);
 

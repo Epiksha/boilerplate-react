@@ -1,0 +1,40 @@
+@use '../../scss/variables' as *;
+
+.checkbox {
+    position: relative;
+
+    user-select: none;
+
+    text-transform: none;
+}
+
+.checkbox__text {
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-left: 1rem;
+
+    color: $color0;
+
+    font-size: 1.6rem;
+    line-height: 1;
+    letter-spacing: 0.025rem;
+}
+
+.checkbox__icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    padding: 0.2rem;
+    border: solid 0.1rem $color2;
+    border-radius: 0.2rem;
+
+    & > div {
+        position: relative;
+
+        height: 1.6rem;
+        width: 1.6rem;
+
+        transition: background-color $timing-1;
+    }
+}

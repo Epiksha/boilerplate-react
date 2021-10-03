@@ -1,13 +1,15 @@
-@use '../_abstracts.scss' as *;
+@use '../_variables.scss' as *;
 
-.list {
-    // Global
+ul,
+ol {
     margin: 0;
     padding-left: 2rem;
 
     list-style: none;
 
     li {
+        margin-top: 0;
+
         &:before {
             display: inline-block;
             vertical-align: middle;
@@ -20,63 +22,42 @@
             font-weight: bold;
         }
     }
+}
 
-    // Specific
-    &--clear {
-        padding-left: 0;
-        
-        list-style: none;
-    }
-
-    &--ordered {
-        counter-reset: li;
-
-        li {
-            &:before {
-                display: inline;
-                direction: rtl;
-                content: '' counter(li) '.';
-                counter-increment: li;
-                text-align: right;
-        
-                margin-left: -1.75rem;
-        
-                font-size: 1.4rem;
-                font-weight: bold;
-    
-                &:not(:first-of-type) {
-                    margin-top: 0.75rem;
-                }
-            }
+ul {
+    li {
+        &:before {
+            content: '\2022';
+                    
+            height: 100%;
+            margin-left: -2rem;
+            
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
         }
     }
+}
 
-    &--unordered {
-        li {
+ol {
+    counter-reset: li;
+
+    li {
+        &:before {
+            display: inline;
+            direction: rtl;
+            content: '' counter(li) '.';
+            counter-increment: li;
+            text-align: right;
+    
+            margin-left: -1.75rem;
+    
+            font-size: 1.4rem;
+            font-weight: bold;
+
             &:not(:first-of-type) {
                 margin-top: 0.75rem;
             }
-
-            &:before {
-                content: '\2022';
-                        
-                height: 100%;
-                margin-left: -2rem;
-                
-                font-size: 2rem;
-                font-weight: bold;
-                line-height: 1;
-            }
-        }
-    }
-    
-    &--nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @media (min-width: $tablet) {
-            flex-direction: row;
         }
     }
 }

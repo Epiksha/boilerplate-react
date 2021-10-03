@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+pre {
+    width: 100%;
+}
+
+pre code {
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2rem;
+
+    // background-color: $color-6;
+    // color: $color-0;
+}

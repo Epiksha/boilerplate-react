@@ -1,6 +1,3 @@
-// Default Imports
-@use 'defaults';
-
 // Vendor Imports
 @use 'vendors';
 
@@ -9,6 +6,9 @@
 
 // Component Imports
 @use 'components';
+
+// Route Imports
+@use 'routes';
 
 // Custom Utility Imports
 @use 'utilities';
