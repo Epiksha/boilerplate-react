@@ -23,7 +23,7 @@ export const Nav = ({ items }: MenuItems): JSX.Element => {
                 <span />
             </button>
 
-            <ul className="nav__list">
+            <ul className="nav__list" data-testid="page-header-nav__list">
                 {items.map(({ label, url }) => (
                     <li className="nav__item" key={label}>
                         <Link
