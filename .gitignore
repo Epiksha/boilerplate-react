@@ -11,3 +11,4 @@ dist/
 .pnp.cjs
 yarn-error.log
 .husky/
+.idea/
