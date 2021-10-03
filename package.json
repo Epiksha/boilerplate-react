@@ -4,6 +4,7 @@
     "author": "Calvin Tiley",
     "description": "A boilerplate for React",
     "main": "index.js",
+    "private": true,
     "scripts": {
         "watch": "webpack serve --config webpack.development.js",
         "build": "webpack --config webpack.production.js",
