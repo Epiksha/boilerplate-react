@@ -3,9 +3,10 @@ import { MemoryRouter } from 'react-router-dom';
 import Nav from './Nav';
 
 describe('Nav component', () => {
-    let items;
-    let NavElement;
-    let navList;
+    let items: { label: string, url: string }[];
+    let navElement: HTMLElement;
+    let navList: HTMLUListElement;
+    let hamburgerMenu: HTMLButtonElement;
 
     beforeEach(() => {
         items = [
@@ -14,23 +15,24 @@ describe('Nav component', () => {
         ];
 
         render(<MemoryRouter><Nav items={items} /></MemoryRouter>);
-        NavElement = screen.getByTestId('page-header-nav');
 
-        navList = within(NavElement).queryByTestId('page-header-nav__list');
-    })
-
-    it('Mounts properly', () => {
-        expect(NavElement).toBeInTheDocument();
+        navElement = screen.getByTestId('page-header-nav');
+        navList = within(navElement).queryByTestId('page-header-nav-list') as HTMLUListElement;
+        hamburgerMenu = within(navElement).queryByTestId('page-header-hamburger') as HTMLButtonElement;
     });
 
-    it(`Navigation item 'Test One' gets mounted`, () => {
-        const item = within(navList).queryByText('Test One');
+    it('Mounts properly', () => {
+        expect(navElement).toBeInTheDocument();
+    });
+
+    it(`Navigation item 'Test One' is found`, () => {
+        const item = within(navElement).queryByText('Test One');
 
         expect(item).toBeDefined();
     });
 
-    it(`Navigation item 'Test Two' gets mounted`, () => {
-        const item = within(navList).queryByText('Test Two');
+    it(`Navigation item 'Test Two' is found`, () => {
+        const item = within(navElement).queryByText('Test Two');
 
         expect(item).toBeDefined();
     });

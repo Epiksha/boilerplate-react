@@ -1,36 +1,15 @@
 @use '../../scss/variables' as *;
 
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+.footer {
+    text-align: center;
 
     box-sizing: border-box;
-    height: 7.2rem;
-    padding: 1rem 0;
+    height: $footer-height;
+    padding: 8rem;
 
-    background-color: $color5;
-    color: $color0;
-    box-shadow: $box-shadow-1;
+    background-color: $color2;
 
-    line-height: 1;
-
-    &__title {
-        font-size: 3.2rem;
-    }
-
-    &__container {
-        display: flex;
-        align-items: center;
-    }
-
-    &__end {
-        text-align: right;
-        flex-grow: 1;
-
-        @media (min-width: $tablet) {
-            display: flex;
-            justify-content: flex-end;
-        }
+    h2 {
+        color: $color0;
     }
 }

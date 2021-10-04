@@ -1,8 +1,7 @@
-import React from 'react';
 import ReactDOM from 'react-dom' ;
 import { Provider } from 'react-redux';
 import { getContext, resetContext } from 'kea';
-import { App } from './App';
+import App from './App/App';
 
 import './scss/entry.scss';
 

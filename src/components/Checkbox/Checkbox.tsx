@@ -1,26 +1,22 @@
 import { useEffect, useState } from 'react';
 import Icon from '../Icon/Icon';
+import CheckboxProps from './Checkbox.types';
 
-interface CheckboxProps {
-    classes?: string;
-    handler: (isChecked: boolean) => void;
-    label?: string;
-}
-
-export const Checkbox = ({ classes, handler, label = '' }: CheckboxProps): JSX.Element => {
+export const Checkbox = ({ handler, label = '', classes = '' }: CheckboxProps): JSX.Element => {
     const [isChecked, setIsChecked] = useState(false);
 
-    useEffect(() => {
-        handler(isChecked);
-    }, [isChecked])
+    useEffect(() => handler(isChecked), [isChecked]);
 
     return (
-        <label className={`checkbox ${classes ? classes : ''}`}>
+        <label
+            data-testid="checkbox"
+            className={`checkbox ${classes ? classes : ''}`}
+        >
             <input
                 type="checkbox"
                 checked={isChecked}
                 className="input input--checkbox"
-                onChange={() => setIsChecked(value => !value)}
+                onChange={() => setIsChecked((isChecked: boolean) => !isChecked)}
             />
     
             <div className="checkbox__icon">
@@ -32,12 +28,7 @@ export const Checkbox = ({ classes, handler, label = '' }: CheckboxProps): JSX.E
                 </div>
             </div>
     
-            {label && (
-                <span
-                    className="checkbox__text"
-                    v-text="label"
-                >{{label}}</span>
-            )}
+            {label && <span className="checkbox__text">{label}</span>}
         </label>
     );
 };

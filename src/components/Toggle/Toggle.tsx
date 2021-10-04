@@ -1,12 +1,10 @@
-interface ToggleProps {
-    classes?: string;
-    isChecked: boolean;
-    label?: string;
-    handleToggle: () => void;
-}
+import ToggleProps from './Toggle.types';
 
-export const Toggle = ({ classes = '', isChecked, label, handleToggle }: ToggleProps): JSX.Element => (
-    <label className={`toggle ${classes}`}>
+export const Toggle = ({ classes = '', isChecked, label, handler }: ToggleProps): JSX.Element => (
+    <label
+        className={`toggle ${classes}`}
+        data-testid="toggle"
+    >
         {label && <span className="toggle__text">{label}</span>}
 
         <input
@@ -15,7 +13,7 @@ export const Toggle = ({ classes = '', isChecked, label, handleToggle }: ToggleP
             className="input input--toggle"
             aria-checked={isChecked}
             role="switch"
-            onChange={() => handleToggle()}
+            onChange={() => handler()}
         />
 
         <div className="toggle__container">

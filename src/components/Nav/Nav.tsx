@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 interface MenuItems {
     items: { label: string, url: string }[],
@@ -16,6 +16,7 @@ export const Nav = ({ items }: MenuItems): JSX.Element => {
             <button
                 className={`button button--hamburger${isMenuActive ? ' active' : ''}`}
                 onClick={() => setIsMenuActive(!isMenuActive)}
+                data-testid="page-header-hamburger"
             >
                 <span />
                 <span />
@@ -23,16 +24,18 @@ export const Nav = ({ items }: MenuItems): JSX.Element => {
                 <span />
             </button>
 
-            <ul className="nav__list" data-testid="page-header-nav__list">
+            <ul
+                data-testid="page-header-nav-list"
+                className="nav__list"
+            >
                 {items.map(({ label, url }) => (
                     <li className="nav__item" key={label}>
-                        <Link
-                            className="nav__link"
+                        <NavLink
+                            className="link nav__link"
                             to={url}
-                            data-testid={`nav-item-${label.toLowerCase()}`}
                         >
                             {label}
-                        </Link>
+                        </NavLink>
                     </li>
                 ))}
             </ul>

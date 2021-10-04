@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Icon from '../Icon/Icon';
-
-interface InputProps {
-    autoComplete?: string;
-    classes?: string;
-    errors?: string[];
-    handler: (value: string|number) => void;
-    id?: string;
-    isActive?: boolean;
-    label?: string;
-    placeholder?: string;
-    required?: boolean;
-    type?: string;
-    value: string|number;
-}
+import InputProps from './Input.types';
 
 export const Input = ({
     autoComplete = '',
@@ -61,6 +48,7 @@ export const Input = ({
                 ${isActive && 'active'}
                 ${errors?.length && 'active'}
             `}
+            data-testid="input"
         >
             {label && (
                 <label

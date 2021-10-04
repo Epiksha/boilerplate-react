@@ -1,13 +1,6 @@
-import { ReactNode } from 'react';
 import Icon from '../Icon/Icon';
 import Plus from '../Plus/Plus';
-
-interface AccordionProps {
-    iconType?: string;
-    iconPosition?: string;
-    title: string;
-    children: ReactNode,
-}
+import AccordionProps from './Accordion.types';
 
 export const Accordion =  ({
     iconType,
@@ -21,6 +14,7 @@ export const Accordion =  ({
             ${iconPosition === 'right' ? 'accordion--right': ''}
             accordion
         `}
+        data-testid="accordion"
     >
         <summary className="accordion__title">
             {iconPosition === 'left' && (

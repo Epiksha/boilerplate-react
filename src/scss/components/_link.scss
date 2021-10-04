@@ -1,0 +1,12 @@
+@use '../variables' as *;
+
+.link {
+    color: $color3;
+
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    &:hover {
+        color: $color4;
+    }
+}

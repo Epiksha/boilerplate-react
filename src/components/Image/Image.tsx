@@ -1,9 +1,4 @@
-interface ImageProps {
-    alt?: string;
-    classes?: string;
-    external?: boolean;
-    name: string;
-}
+import ImageProps from './Image.types';
 
 export const Image = ({name, alt = '', classes = '', external = false}: ImageProps): JSX.Element => {
     let importedImage;
@@ -23,6 +18,7 @@ export const Image = ({name, alt = '', classes = '', external = false}: ImagePro
             alt={alt ? alt : ''}
             role={alt ? 'img' : 'presentation'}
             className={`image ${classes ? classes : ''}`}
+            data-testid="image"
         />
     );
 };

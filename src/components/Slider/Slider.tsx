@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-interface RangeProps {
-    classes?: string;
-    max?: number;
-    min?: number;
-    handler: (value: number) => void;
-    step?: number;
-    value: number;
-}
+import SliderProps from './Slider.types';
 
 export const Slider = ({
     classes,
@@ -16,7 +8,7 @@ export const Slider = ({
     handler,
     step = 1,
     value = 0
-}: RangeProps): JSX.Element => {
+}: SliderProps): JSX.Element => {
     const [trackSize, setTrackSize] = useState(((+value - min) * 100) / (max - min));
 
     useEffect(() => {
@@ -33,6 +25,7 @@ export const Slider = ({
             className={`input input--range ${classes ? classes : ''}`}
             onInput={({ target }: React.ChangeEvent<HTMLInputElement>) => handler(parseInt(target.value))}
             style={{backgroundSize: `${trackSize}% 100%`}}
+            data-testid="slider"
         />
     );
 };

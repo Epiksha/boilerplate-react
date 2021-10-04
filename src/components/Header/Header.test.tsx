@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import Header from './Header';
 
 describe('Header component', () => {
-    render(<BrowserRouter><Header /></BrowserRouter>);
+    render(<MemoryRouter><Header /></MemoryRouter>);
     const headerElement = screen.getByTestId('page-header');
 
     it('Mounts properly', () => {

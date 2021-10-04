@@ -44,31 +44,55 @@
     &__link {
         display: block;
         text-align: center;
+
+        position: relative;
         
         padding: 2rem;
         
-        background-color: $color8;
-        color: $color0;
+        background-color: $color0;
         
         font-weight: 600;
         text-transform: uppercase;
         text-decoration: none;
 
         transition: color $timing-2;
+        
 
-        .nav__item:not(:last-child) & {
-            border-bottom: solid 0.1rem $color5;
+        &.active {
+            color: $color3;
         }
 
-        &:hover {
-            color: $color2;
-
-            text-decoration: none;
+        .nav__item & {
+            border-bottom: solid 0.1rem $color5;
         }
 
         @media (min-width: $tablet) {
             background-color: transparent;
-            color: $color3;
+
+            &:after {
+                content: '';
+                display: block;
+    
+                position: absolute;
+                bottom: 1.4rem;
+                left: 50%;
+                transform: translateX(-50%);
+    
+                height: 0.3rem;
+                width: calc(100% - 4rem);
+    
+                background-color: $color3;
+    
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 250ms;
+            }
+
+            &.active {
+                &:after {
+                    opacity: 1;
+                }
+            }
         }
     }
 }

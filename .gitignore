@@ -10,5 +10,5 @@ dist/
 .yarnrc.yml
 .pnp.cjs
 yarn-error.log
-.husky/
 .idea/
+coverage/

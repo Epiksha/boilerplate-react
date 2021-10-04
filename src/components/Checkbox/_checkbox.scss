@@ -1,5 +1,16 @@
 @use '../../scss/variables' as *;
 
+.input.input--checkbox {
+    position: absolute;
+    left: -999rem;
+
+    height: 1.8rem;
+    width: 1.8rem;
+    border: none;
+
+    opacity: 0;
+}
+
 .checkbox {
     position: relative;
 
@@ -14,7 +25,7 @@
 
     margin-left: 1rem;
 
-    color: $color0;
+    color: $color3;
 
     font-size: 1.6rem;
     line-height: 1;
@@ -26,7 +37,7 @@
     vertical-align: middle;
 
     padding: 0.2rem;
-    border: solid 0.1rem $color2;
+    border: solid 0.1rem $color3;
     border-radius: 0.2rem;
 
     & > div {
@@ -36,5 +47,14 @@
         width: 1.6rem;
 
         transition: background-color $timing-1;
+    }
+
+    .input.input--checkbox:checked ~ & {
+        background-color: $color3;
+
+        svg {
+            fill: $color0;
+            transition: fill $timing-1;
+        }
     }
 }

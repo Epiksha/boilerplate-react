@@ -10,24 +10,12 @@ import Radios from '../../components/Radios/Radios';
 import Slider from '../../components/Slider/Slider';
 import Toggle from '../../components/Toggle/Toggle';
 
+import CheckboxProps from '../../components/Checkbox/Checkbox.types';
+
 export const Styleguide = (): JSX.Element => {
     // State
     const [isToggled, setIsToggled] = useState(false);
     const [sliderValue, setSliderValue] = useState(100);
-    const [checkboxes, setCheckboxes] = useState([
-        {
-            label: 'Checkbox Option 1',
-            isChecked: true,
-        },
-        {
-            label: 'Checkbox Option 2',
-            isChecked: false,
-        },
-        {
-            label: 'Checkbox Option 3',
-            isChecked: false,
-        },
-    ]);
 
     const [radios, setRadios] = useState([
         {
@@ -71,6 +59,22 @@ export const Styleguide = (): JSX.Element => {
         },
     ]);
 
+    const checkboxHandler = (isChecked: boolean) => console.log(isChecked);
+    const checkboxes: CheckboxProps[] = [
+        {
+            label: 'Checkbox Option 1',
+            handler: checkboxHandler,
+        },
+        {
+            label: 'Checkbox Option 2',
+            handler: checkboxHandler,
+        },
+        {
+            label: 'Checkbox Option 3',
+            handler: checkboxHandler,
+        },
+    ];
+
 
     // General Settings
     const componentLabels = [
@@ -91,14 +95,6 @@ export const Styleguide = (): JSX.Element => {
             });
         }
     };
-
-    const handleCheckboxChange = (isChecked: boolean, index: number) => {
-        const newCheckboxes = [...checkboxes];
-
-        newCheckboxes[index].isChecked = isChecked;
-
-        setCheckboxes(newCheckboxes);
-    };
     
     const handleRadioChange = (index: number) => {
         const newRadios = [...radios];
@@ -108,22 +104,23 @@ export const Styleguide = (): JSX.Element => {
         setRadios(newRadios);
     };
 
-    const handleInputChange = (value: string|number, index: number) => {
+    const handleInputChange = () => {
         const newInputs = [...inputs];
-
-        newInputs[index].value = value;
 
         setInputs(newInputs);
     };
 
     return (
-        <main className="styleguide container py-4">
+        <main
+            className="styleguide container py-4"
+            data-testid="styleguide"
+        >
             {/* Styleguide Navigation */}
             <aside className="styleguide__sidebar">
                 <nav className="styleguide__nav">
                     <ul className="styleguide__nav__list">
                         <li className="styleguide__nav__item">
-                            <Link to="/" className="button weight-600 color-2">
+                            <Link to="/" className="link">
                                 Back to home
                             </Link>
                         </li>
@@ -251,7 +248,7 @@ export const Styleguide = (): JSX.Element => {
                             <Toggle
                                 label="Toggle Me"
                                 isChecked={isToggled}
-                                handleToggle={() => setIsToggled(value => !value)}
+                                handler={() => setIsToggled(value => !value)}
                             />
                         </div>
                     </section>
@@ -305,14 +302,14 @@ export const Styleguide = (): JSX.Element => {
                             <h4>Checkboxes</h4>
 
                             <div className="flex flex-column">
-                                {checkboxes.map((checkbox, index) => {
+                                {checkboxes.map(({ handler, label }, index) => (
                                     <Checkbox
-                                        key={checkbox.label}
-                                        label={checkbox.label}
-                                        handler={(isChecked: boolean) => handleCheckboxChange(isChecked, index)}
-                                        classes={index ? 'mt-2.5' : ''}
+                                        key={label}
+                                        label={label}
+                                        handler={handler}
+                                        classes={index ? 'mt-2' : ''}
                                     />
-                                })}
+                                ))}
                             </div>
                         </div>
                         
@@ -341,7 +338,7 @@ export const Styleguide = (): JSX.Element => {
                         <div className="mt-4">
                             <h4>Text Boxes</h4>
 
-                            {inputs.map((input, index) => {
+                            {inputs.map(input => {
                                 <Input
                                     id={input.id}
                                     v-model="inputs.text"
@@ -350,9 +347,7 @@ export const Styleguide = (): JSX.Element => {
                                     placeholder={input.placeholder}
                                     label={input.label}
                                     value={input.value}
-                                    handler={(value: string|number) => {
-                                        handleInputChange(value, index)
-                                    }}
+                                    handler={handleInputChange}
                                 />
                             })}
                         </div>
