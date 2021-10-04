@@ -59,7 +59,7 @@ export const Styleguide = (): JSX.Element => {
         },
     ]);
 
-    const checkboxHandler = (isChecked: boolean) => console.log(isChecked);
+    const checkboxHandler = () => { return; };
     const checkboxes: CheckboxProps[] = [
         {
             label: 'Checkbox Option 1',
