@@ -26,6 +26,10 @@
         .button--primary & {
             fill: $color0;
         }
+
+        input + & {
+            fill: $color2;
+        }
     }
 
     // Specific Styling
@@ -42,47 +46,6 @@
 
         svg {
             fill: $color2;
-        }
-    }
-
-    &--carousel {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(calc(-50% + 0.1rem), -50%);
-
-        @include icon-dimensions(2rem);
-
-        fill: white;
-
-        &--left {
-            transform: translate(calc(-50% - 0.1rem), -50%) rotate(180deg);
-        }
-    }
-
-    &--center-play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(calc(-50% + 0.2rem), -50%);
-        
-        @include icon-dimensions(2.4rem);
-
-        svg {
-            transition: fill $timing-1;
-        }
-    }
-    
-    &--center-pause {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
-        @include icon-dimensions(2.4rem);
-
-        svg {
-            transition: fill $timing-1;
         }
     }
 

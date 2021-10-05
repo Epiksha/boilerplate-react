@@ -10,7 +10,7 @@ export const Radios = ({
         className={`radios ${classes ? classes : ''}`}
         data-testid="radios"
     >
-        {radios?.map((radio, index) => {
+        {radios?.map((radio, index) => (
             <label
                 key={radio.label}
                 className="radio"
@@ -22,7 +22,7 @@ export const Radios = ({
                     name={groupName}
                     className="input input--radio"
                     onChange={() => handler(index)}
-                    aria-labelledBy={`${radio.id}-label`}
+                    aria-labelledby={`${radio.id}-label`}
                 />
 
                 <div className="radio__circle"></div>
@@ -34,7 +34,7 @@ export const Radios = ({
                     {radio.label}
                 </span>
             </label>
-        })}
+        ))}
     </form>
 );
 

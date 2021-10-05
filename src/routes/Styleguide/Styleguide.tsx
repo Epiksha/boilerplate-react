@@ -40,21 +40,21 @@ export const Styleguide = (): JSX.Element => {
             id: 'style-guide-input-1',
             value: '',
             label: 'Text',
-            placeholder: 'text',
+            placeholder: 'Text',
             type: 'text',
         },
         {
             id: 'style-guide-input-2',
             value: '',
             label: 'Email',
-            placeholder: 'email',
+            placeholder: 'Email',
             type: 'email',
         },
         {
             id: 'style-guide-input-3',
             value: '',
             label: 'Password',
-            placeholder: 'password',
+            placeholder: 'Password',
             type: 'password',
         },
     ]);
@@ -139,8 +139,8 @@ export const Styleguide = (): JSX.Element => {
                 </nav>
             </aside>
 
-            <div className="styleguide__content">
-                <div className="container mt-4 tablet:mt-0">
+            <div className="styleguide__content py-4">
+                <div className="container tablet:mt-0">
                     <h1>Styleguide</h1>
 
                     {/* Accordions */}
@@ -338,18 +338,18 @@ export const Styleguide = (): JSX.Element => {
                         <div className="mt-4">
                             <h4>Text Boxes</h4>
 
-                            {inputs.map(input => {
+                            {inputs.map(input => (
                                 <Input
+                                    key={input.id}
                                     id={input.id}
                                     v-model="inputs.text"
-                                    classes="mt-4"
                                     type={input.type}
                                     placeholder={input.placeholder}
                                     label={input.label}
-                                    value={input.value}
                                     handler={handleInputChange}
+                                    classes="mt-2"
                                 />
-                            })}
+                            ))}
                         </div>
                     </section>
                 </div>

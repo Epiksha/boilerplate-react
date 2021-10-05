@@ -9,5 +9,4 @@ export default interface InputProps {
     placeholder?: string;
     required?: boolean;
     type?: string;
-    value: string|number;
 };

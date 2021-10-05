@@ -13,17 +13,13 @@ export const Input = ({
     placeholder = '',
     required = false,
     type = 'text',
-    value,
 }: InputProps): JSX.Element => {
     const [isFocused, setIsFocused] = useState(false);
     const [isShowingPassword, setIsShowingPassword] = useState(false);
-    const [iconState, setIconState] = useState({
-        name: '',
-        class: ''
-    });
+    const [iconState, setIconState] = useState({ name: '', class: '' });
 
-    useEffect(() => {
-        if (errors && errors.length && type !== 'password') {
+    const changeIcon = () => {
+        if (errors?.length && type !== 'password') {
             setIconState({
                 name: 'icon-warning',
                 class: 'icon--error',
@@ -39,7 +35,9 @@ export const Input = ({
                 class: 'icon--visible',
             });
         }
-    }, [type, errors]);
+    };
+
+    useEffect(changeIcon, []);
 
     return (
         <fieldset
@@ -47,6 +45,7 @@ export const Input = ({
                 fieldset
                 ${isActive && 'active'}
                 ${errors?.length && 'active'}
+                ${classes ? classes : ''}
             `}
             data-testid="input"
         >
@@ -63,14 +62,9 @@ export const Input = ({
                     id={id ? id : ''}
                     type={isShowingPassword ? 'text' : type}
                     placeholder={placeholder}
-                    className={`
-                        input
-                        ${isActive && 'active'}
-                        ${classes && classes}
-                    `}
+                    className={`input${isActive && ' active'}`}
                     autoComplete={autoComplete}
                     required={required}
-                    value={value}
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     onInput={(event: React.ChangeEvent<HTMLInputElement>) => handler(event.target.value)}
@@ -94,19 +88,6 @@ export const Input = ({
                     </button>
                 )}
             </div>
-
-            {errors?.length && errors.map(error => {
-                <span
-                    v-for="(error, index) in errors"
-                    key={error}
-                    aria-label={`${label} error`}
-                    className="errorText"
-                    role="alert"
-                >
-                    {{ error }}
-                </span>
-            })}
-
         </fieldset>
     );
 };
