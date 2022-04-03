@@ -55,11 +55,13 @@
         "@testing-library/react": "^12.1.1",
         "@types/jest": "^27.0.2",
         "@types/react": "^17.0.24",
-        "@types/react-dom": "^17.0.9",
-        "@types/react-redux": "^7.1.18",
+        "@types/react-dom": "^17.0.14",
+        "@types/react-redux": "^7.1.23",
         "@types/react-router-dom": "^5.3.0",
+        "@types/redux": "^3.6.0",
+        "@types/redux-thunk": "^2.1.0",
         "@types/webpack": "^5.28.0",
-        "@types/webpack-env": "^1.16.2",
+        "@types/webpack-env": "^1.16.3",
         "@typescript-eslint/eslint-plugin": "^4.31.2",
         "@typescript-eslint/parser": "^4.31.2",
         "babel-loader": "^8.2.2",
@@ -74,7 +76,6 @@
         "html-webpack-plugin": "^5.3.2",
         "husky": "^7.0.2",
         "jest": "^27.2.4",
-        "kea-typegen": "^1.1.5",
         "lint-staged": "^11.1.2",
         "postcss": "^8.3.8",
         "postcss-import": "^14.0.2",
@@ -96,13 +97,12 @@
         "yarn": "^1.22.11"
     },
     "dependencies": {
-        "kea": "^2.4.10",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hot-loader": "^4.13.0",
-        "react-redux": "^7.2.5",
+        "react-redux": "^7.2.8",
         "react-router-dom": "^5.3.0",
-        "redux": "^4.1.1",
-        "reselect": "^4.0.0"
+        "redux": "^4.1.2",
+        "redux-thunk": "^2.4.1"
     }
 }

@@ -1,29 +1,33 @@
 {
     "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
         "baseUrl": "./src",
+        "declaration": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react-jsx",
+        "lib": ["dom", "es2019.array"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noImplicitAny": false,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "paths": {
             "types/*": ["./types/*"]
         },
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "esnext",
-        "moduleResolution": "node",
         "resolveJsonModule": true,
-        "noEmit": true,
-        "jsx": "react-jsx",
         "sourceMap": true,
-        "declaration": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "experimentalDecorators": true,
-        "noFallthroughCasesInSwitch": true,
-        "lib": ["dom", "es2019.array"],
+        "skipLibCheck": true,
+        "strict": true,
         "target": "ES2021",
-        "noImplicitAny": false
+        "types": [
+            "node",
+            "webpack-env"
+        ]
     },
     "include": ["src/**/*", "postcss.config.js", "jest-setup.ts"],
     "exclude": ["node_modules/**/*", "staticfiles/**/*", "frontend/dist/**/*"]
