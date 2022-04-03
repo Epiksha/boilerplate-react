@@ -1,33 +1,5 @@
 @use '../../scss/variables' as *;
 
 .notFound {
-    text-align: center;
-
-    &__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    &__title {
-        color: $color3;
-    }
-
-    &__subtitle {
-        margin-top: 4rem;
-
-        color: $color2;
-
-        line-height: 1.25;
-    }
-
-    &__link {
-        display: block;
-
-        margin-top: 2rem;
-
-        font-size: 2rem;
-        font-weight: 600;
-    }
+    
 }

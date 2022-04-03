@@ -1,5 +1,6 @@
+@use '../variables.scss' as *;
+
 @mixin range-track() {
-    height: 0.2rem;
     width: 100%;
     border: none;
     border-radius: 0;
@@ -9,13 +10,15 @@
     cursor: pointer;
 }
 
-@mixin range-thumb($thumbColor, $height: 1rem, $width: $height) {
-    height: 1.3rem;
-    width: 1.3rem;
+@mixin range-thumb($thumbColor: $color2, $height: 1rem, $width: $height) {
+    width: $width;
+    height: $height;
     border: none;
     border-radius: 50%;
 
-    background-color: $thumbColor;
+    background: $thumbColor;
 
     cursor: pointer;
+
+    -webkit-appearance: none;
 }

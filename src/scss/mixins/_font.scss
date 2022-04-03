@@ -1,42 +1,47 @@
 @use 'sass:list';
 @use 'sass:string';
 
-@mixin add-formatted($source) {
+@function add-formatted-source($url, $format, $formattedSources) {
+    $source: list.join((), url($url) format($format), space);
+
     @if list.length($formattedSources) == 0 {
-        $formattedSources: list.append($formattedSources, $source) !global;
+        @return list.append($formattedSources, $source);
     } @else {
-        $formattedSources: list.append($formattedSources, $source, $separator: comma) !global;
+        @return list.append($formattedSources, $source, $separator: comma);
     }
 }
 
-$formattedSources: ();
-
-@mixin import($family, $sources, $style: normal, $weight: normal) {
+@mixin import($family, $sources, $style: normal, $weight: 400) {
     @font-face {
         font-family: $family;
         font-style: $style;
         font-weight: $weight;
         font-display: swap;
 
+        $formattedSources: ();
+
         @each $source in $sources {
             $extension: string.slice($source, string.index($source, '.') + 1);
 
-            @if $extension == woff2 {
-                @include add-formatted(list.join((), resolve($source) format('woff2'), space));
-            } @else if $extension == woff {
-                @include add-formatted(list.join((), resolve($source) format('woff'), space));
+            $sourceString: '../assets/fonts/#{$source}';
+            $format: null;
+
+            @if $extension == woff or $extension == woff2 {
+                $format: '#{$extension}';
+            } @else if $extension == otf {
+                $format: 'opentype';
             } @else if $extension == ttf {
-                @include add-formatted(list.join((), resolve($source) format('truetype'), space));
+                $format: 'truetype';
             } @else if $extension == eot {
-                src: resolve($source);
-                @include add-formatted(list.join((), resolve('#{$source}?#iefix') format('embedded-opentype'), space));
+                $format: 'embedded-opentype';
+                $sourceString: $sourceString + '?#iefix';
             } @else {
                 @error 'import-font: Font extension invalid';
             }
+
+            $formattedSources: add-formatted-source($sourceString, $format, $formattedSources);
         }
 
         src: $formattedSources;
-
-        $formattedSources: () !global;
     }
 }

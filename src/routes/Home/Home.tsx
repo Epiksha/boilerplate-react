@@ -6,8 +6,8 @@ export const HomePage = (): JSX.Element => (
         data-testid="home"
     >
         <Link
-            to="/styleguide"
-            className="link"
+            to="styleguide"
+            className="inline-block pt-2"
         >
             Styleguide
         </Link>

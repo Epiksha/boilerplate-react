@@ -1,13 +1,16 @@
 @use 'sass:color';
 
-$color0: #ffffff;
-$color1: #000000;
-$color2: #192e42;
-$color3: #5ac09e;
-$color4: #7cc6fe;
-$color5: #f4faff;
-$color6: #8789c0;
-$color7: #cac8c8;
-$color8: #1fab71;
+$color-1: #40C9A2;
+$color-2: #2F9C95;
+$color-3: #A3F7B5;
+$color-4: #664147;
+$color-5: #E5F9E0;
 
-$box-shadow-1: 0.2rem 0.2rem 1rem 0.2rem color.adjust($color1, $alpha: -0.9);
+$color-gray-1: #eeeeee;
+$color-gray-2: #dddddd;
+$color-gray-3: #cccccc;
+$color-gray-4: #bbbbbb;
+$color-gray-5: #aaaaaa;
+
+$box-shadow-1: 0.2rem 0.2rem 1rem 0.2rem color.adjust(black, $alpha: -0.9);
+$box-shadow-2: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust(black, $alpha: -0.9);

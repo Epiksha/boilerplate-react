@@ -47,6 +47,11 @@ module.exports = {
                 ],
             },
             {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                include: [resolve(__dirname, 'src/assets/fonts')],
+            },
+            {
                 test: /\.svg$/,
                 include: [
                     resolve(__dirname, 'src/assets/icons'),

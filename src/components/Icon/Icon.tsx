@@ -1,6 +1,6 @@
-import IconProps from './Icon.types';
+import props from './props';
 
-export const Icon = ({ classes, name }: IconProps): JSX.Element => (
+export const Icon = ({ classes, name }: props): JSX.Element => (
     <div
         data-testid="icon"
         className={`icon ${classes ? classes : ''}`}

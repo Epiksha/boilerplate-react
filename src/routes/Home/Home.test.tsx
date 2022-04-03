@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router';
 import Home from './Home';
 
 describe('Home component', () => {
-    let homeElement;
+    let homeElement: HTMLElement;
     
     beforeEach(() => {
         render(<MemoryRouter><Home /></MemoryRouter>);

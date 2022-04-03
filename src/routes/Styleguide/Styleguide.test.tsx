@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router';
 import Styleguide from './Styleguide';
 
 describe('Styleguide component', () => {
-    let styleguideElement;
+    let styleguideElement: HTMLElement;
     
     beforeEach(() => {
         render(<MemoryRouter><Styleguide /></MemoryRouter>);

@@ -20,3 +20,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+document.body.classList.remove('nojs');

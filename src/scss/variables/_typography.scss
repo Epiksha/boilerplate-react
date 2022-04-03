@@ -1,1 +1,2 @@
-$family-1: 'Roboto', Arial, Helvetica, sans-serif;
+$font-fallback: Arial, Helvetica, sans-serif;
+$font-family-1: 'Roboto', $font-fallback;

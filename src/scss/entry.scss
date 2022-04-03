@@ -1,14 +1,14 @@
-// Vendor Imports
-@use 'vendors';
+@use 'global/main' as *;
 
-// Animation Imports
-@use 'animations';
+// Vendors
+/* purgecss start ignore */
+@use 'vendors/utilizer';
+/* purgecss end ignore */
 
-// Component Imports
-@use 'components';
+// Pages
+@use '../routes/Home/home';
+@use '../routes/Styleguide/styleguide';
+@use '../routes/NotFound/notFound';
 
-// Route Imports
-@use 'routes';
-
-// Custom Utility Imports
-@use 'utilities';
+// Components
+@use '../components/Spinner/spinner';
