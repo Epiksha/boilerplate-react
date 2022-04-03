@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-import Styleguide from './Styleguide';
+import Styleguide from './';
 
 describe('Styleguide component', () => {
     let styleguideElement: HTMLElement;

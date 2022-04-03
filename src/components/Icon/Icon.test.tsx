@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Icon from './Icon';
+import Icon from './';
 
 describe('Icon component', () => {
     let iconElement: HTMLElement;

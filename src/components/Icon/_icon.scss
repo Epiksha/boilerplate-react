@@ -2,7 +2,6 @@
 @use '../../scss/mixins' as *;
 
 .icon {
-    // Global Styling
     display: inline-block;
     vertical-align: middle;
 
@@ -19,7 +18,7 @@
         width: 100%;
         height: 100%;
 
-        fill: black;
+        fill: $color-1;
 
         transition: fill $timing-1;
     }

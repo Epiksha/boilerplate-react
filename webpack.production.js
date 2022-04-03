@@ -11,11 +11,6 @@ module.exports = merge(common, {
         minimizer: [
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
-                minify: {
-                    removeAttrbuteQuotes: true,
-                    collapseWhitespace: true,
-                    removeComments: true
-                }
             }),
             new CssMinimizerPlugin(),
         ]

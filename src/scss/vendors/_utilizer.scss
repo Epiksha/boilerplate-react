@@ -1,4 +1,7 @@
-@use '../settings/main' as *;
+@use '../settings/main' as settings;
 @use '~sass-utilizer/utilizer';
 
-@include utilizer.render($utilities, ( breakpoints: $breakpoints ));
+@include utilizer.render(
+    settings.$utilities,
+    ( breakpoints: settings.$breakpoints )
+);

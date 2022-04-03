@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import Image from './Image';
+import Image from './';
 
 describe('Image component', () => {
     let imageElement: Element;
     
     beforeEach(() => {
-        render(<Image name="react.png" />);
+        render(<Image src="react.png" />);
 
         imageElement = screen.getByTestId('image');
     });

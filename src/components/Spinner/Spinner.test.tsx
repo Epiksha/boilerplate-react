@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Spinner from './Spinner';
+import Spinner from './';
 
 describe('Spinner component', () => {
     let spinnerElement: HTMLElement;

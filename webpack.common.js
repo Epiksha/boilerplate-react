@@ -8,6 +8,7 @@ module.exports = {
         clean: true,
         filename: 'bundle.js',
         path: resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
 
     plugins: [
@@ -27,7 +28,6 @@ module.exports = {
                   {
                     options: {
                       eslintPath: require.resolve('eslint'),
-            
                     },
                     loader: require.resolve('eslint-loader'),
                   },
@@ -42,9 +42,7 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset/resource',
-                include: [
-                    resolve(__dirname, 'src/assets/images'),
-                ],
+                include: [resolve(__dirname, 'src/assets/images')],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -53,13 +51,8 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                include: [
-                    resolve(__dirname, 'src/assets/icons'),
-                ],
-                use: [
-                    'svg-sprite-loader',
-                    'svgo-loader'
-                ]
+                include: [resolve(__dirname, 'src/assets/icons')],
+                use: ['svg-sprite-loader', 'svgo-loader'],
             },
         ],
     },

@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 
 // Route Imports
-import NotFound from '../routes/NotFound/NotFound';
-import Home from '../routes/Home/Home';
-import Styleguide from '../routes/Styleguide/Styleguide';
+import NotFound from '../routes/NotFound';
+import Home from '../routes/Home';
+import Styleguide from '../routes/Styleguide';
 
 export function _App(): JSX.Element {
     return (

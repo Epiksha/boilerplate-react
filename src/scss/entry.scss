@@ -1,9 +1,7 @@
-@use 'global/main' as *;
+@use 'global/index' as globalStyling;
 
 // Vendors
-/* purgecss start ignore */
 @use 'vendors/utilizer';
-/* purgecss end ignore */
 
 // Pages
 @use '../routes/Home/home';
@@ -11,4 +9,7 @@
 @use '../routes/NotFound/notFound';
 
 // Components
+@use '../components/Icon/icon';
+@use '../components/Image/image';
+@use '../components/Range/range';
 @use '../components/Spinner/spinner';

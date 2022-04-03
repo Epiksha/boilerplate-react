@@ -1,4 +1,4 @@
-@use '../mixins/main' as mixins;
+@use '../mixins/index' as mixins;
 
 // Roboto
 @include mixins.font-import('Roboto', 'Roboto-Light.ttf', normal, 300);
