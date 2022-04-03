@@ -6,7 +6,7 @@ export const Icon = ({ classes, name }: props): JSX.Element => (
         className={`icon${classes ? ` ${classes}` : ''}`}
     >
         <svg>
-            <use xlinkHref={`#${name}`} />
+            <use href={`#${name}`} />
         </svg>
     </div>
 );
