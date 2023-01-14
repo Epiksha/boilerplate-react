@@ -1,0 +1,11 @@
+import React from "react";
+
+export default (arg: any) => {
+  const [data, setData] = React.useState<unknown>();
+
+  React.useEffect(() => {
+    setData(arg);
+  }, [arg]);
+
+  return [data];
+};

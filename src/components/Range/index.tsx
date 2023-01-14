@@ -1,37 +1,48 @@
-import { useEffect, useRef, useState } from 'react';
-import props from './props';
+import React, { useEffect, useRef, useState } from "react";
 
-export const Range = ({
-    ariaLabel = '',
-    ariaLabelledBy = '',
-    classes = '',
+export interface IRangeProps {
+    ariaLabel?: string,
+    ariaLabelledBy?: string,
+    classes?: string,
+    handler: (value: number) => void,
+    id?: string,
+    max?: number,
+    min?: number,
+    step?: number,
+    value: number,
+};
+
+export const Range: React.FC<IRangeProps> = ({
+    ariaLabel = "",
+    ariaLabelledBy = "",
+    classes = "",
     handler,
-    id = '',
+    id = "",
     max = 100,
     min = 0,
     step = 0.1,
     value,
-}: props): JSX.Element => {
-    const [backgroundImage, setBackgroundImage] = useState('');
+}) => {
+    const [backgroundImage, setBackgroundImage] = useState("");
     const sliderRef = useRef(null);
 
     const buildGradient = () => {
         const slider = ((sliderRef.current as unknown) as HTMLInputElement);
         const gradient = window.getComputedStyle(slider).backgroundImage.toString();
-        const colors = [];
-    
+        const colors: string[] = [];
+
         gradient
             .replace(/^.*?linear-gradient *\((.+)/, (substring: string): string => {
                 return (substring.match(/rgb *\([^)]+\)/g) as unknown) as string;
             })
-            .split('),').forEach(color => {
-                const newColor = color[color.length - 1] !== ')' ? `${color})` : color;
-                
+            .split("),").forEach(color => {
+                const newColor = color[color.length - 1] !== ")" ? `${color})` : color;
+
                 if (colors.indexOf(newColor as never) === -1) {
                     colors.push(newColor as never);
                 }
             });
-        
+
         setBackgroundImage(`linear-gradient(
             to right,
             ${colors[0]} ${-100 + value}% ${value}%,
@@ -42,13 +53,13 @@ export const Range = ({
     useEffect(() => {
         const rangeValue = Number(((sliderRef.current as unknown) as HTMLInputElement).value);
         handler(rangeValue);
-        
+
         buildGradient();
     }, [value]);
 
     return (
         <input
-            className={`range${classes ? ` ${classes}` : ''}`}
+            className={`range${classes ? ` ${classes}` : ""}`}
             type="range"
             ref={sliderRef}
             id={id}

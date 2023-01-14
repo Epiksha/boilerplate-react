@@ -1,19 +1,17 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader/root';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { hot } from "react-hot-loader/root";
 
-// Route Imports
-import NotFound from '../routes/NotFound';
-import Home from '../routes/Home';
-import Styleguide from '../routes/Styleguide';
+import routes, { IRoute } from "../libs/routes";
 
 export function _App(): JSX.Element {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path="/" component={Home} exact />
-                <Route path="/styleguide" component={Styleguide} />
-                <Route component={NotFound} />
-            </Switch>
+            <Routes>
+                {routes?.map((route: IRoute) => (
+                    <Route {...route} />
+                ))}
+            </Routes>
         </BrowserRouter>
     );
 }

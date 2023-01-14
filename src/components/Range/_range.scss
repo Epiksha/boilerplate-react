@@ -1,5 +1,5 @@
-@use '../../scss/mixins/index' as mixins;
-@use '../../scss/variables' as *;
+@use "../../scss/mixins" as mixins;
+@use "../../scss/variables" as *;
 
 input[type=range] {
     display: block;
@@ -23,11 +23,11 @@ input[type=range] {
     cursor: pointer;
     -webkit-appearance: none;
     transition: background-image 200ms;
-    
+
     &::-webkit-slider-runnable-track {
         @include mixins.input-range-track();
     }
-    
+
     &::-webkit-slider-thumb {
         @include mixins.input-range-thumb(transparent);
     }

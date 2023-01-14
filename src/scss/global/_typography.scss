@@ -1,9 +1,0 @@
-@use '../mixins/index' as mixins;
-
-// Roboto
-@include mixins.font-import('Roboto', 'Roboto-Light.ttf', normal, 300);
-@include mixins.font-import('Roboto', 'Roboto-Regular.ttf', normal, 400);
-@include mixins.font-import('Roboto', 'Roboto-Bold.ttf', normal, 600);
-@include mixins.font-import('Roboto', 'Roboto-LightItalic.ttf', italic, 300);
-@include mixins.font-import('Roboto', 'Roboto-Italic.ttf', italic, 400);
-@include mixins.font-import('Roboto', 'Roboto-BoldItalic.ttf', italic, 600);

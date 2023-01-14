@@ -1,15 +1,15 @@
-@use 'global/index' as globalStyling;
+@use "animations";
+@use "global";
+@use "layout";
+@use "typography";
 
-// Vendors
-@use 'vendors/utilizer';
+@use "../components/Icon/icon";
+@use "../components/Image/image";
+@use "../components/Range/range";
+@use "../components/Spinner/spinner";
+// Append component here
 
-// Pages
-@use '../routes/Home/home';
-@use '../routes/Styleguide/styleguide';
-@use '../routes/NotFound/notFound';
 
-// Components
-@use '../components/Icon/icon';
-@use '../components/Image/image';
-@use '../components/Range/range';
-@use '../components/Spinner/spinner';
+@use "../pages/Home/home";
+@use "../pages/NotFound/not-found";
+// Append page here

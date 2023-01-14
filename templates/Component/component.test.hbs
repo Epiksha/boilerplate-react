@@ -1,0 +1,19 @@
+import React from "react";
+import { render } from "@testing-library/react";
+
+import {{pascalCase name}} from "./index";
+
+describe("{{pascalCase name}} component", () => {
+  test("Renders correctly", () => {
+    const { getByTestId } = render(
+      <{{pascalCase name}}
+        className="{{kebabCase name}}--test"
+        testId="{{kebabCase name}}"
+      />
+    );
+
+    const {{camelCase name}} = getByTestId("{{kebabCase name}}");
+
+    expect({{camelCase name}}.textContent).toEqual("{{pascalCase name}}");
+  });
+});

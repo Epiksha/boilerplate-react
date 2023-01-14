@@ -1,0 +1,51 @@
+@mixin variant (
+  $name,
+  $bgColor,
+  $textColor,
+  $textColor--hover: $textColor,
+  $textColor--focus: $textColor--hover,
+  $bgColor--hover: $bgColor,
+  $bgColor--focus: $bgColor--hover,
+) {
+  &.button--#{$name} {
+    background-color: $bgColor;
+
+    .button__label {
+      color: $textColor;
+    }
+
+    &:hover {
+      background-color: $bgColor--hover;
+
+      .button__label {
+        color: $textColor--hover;
+      }
+    }
+
+    &:focus, &:active, &:visited {
+      outline: solid 0.2rem $textColor--focus;
+    }
+
+    &.button--outlined {
+      border-color: currentColor;
+      background-color: transparent;
+
+      .button__label {
+        color: $textColor;
+      }
+
+      &:hover {
+        border-color: $bgColor--hover;
+        background-color: $bgColor--hover;
+
+        .button__label {
+          color: $textColor--hover;
+        }
+      }
+
+      &:focus, &:active, &:visited {
+        border-color: $textColor--focus;
+      }
+    }
+  }
+}

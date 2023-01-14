@@ -1,0 +1,4 @@
+@use "sass:color";
+@use "colors" as *;
+
+$divider: solid 0.1rem color.adjust($color-white, $alpha: -0.9);

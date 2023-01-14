@@ -1,34 +1,27 @@
 {
     "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": "./src",
-        "declaration": true,
-        "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true,
-        "jsx": "react-jsx",
-        "lib": ["dom", "es2019.array"],
-        "module": "esnext",
-        "moduleResolution": "node",
-        "noEmit": true,
-        "noImplicitAny": false,
-        "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "paths": {
-            "types/*": ["./types/*"]
-        },
-        "resolveJsonModule": true,
-        "sourceMap": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "target": "ES2021",
-        "types": [
-            "node",
-            "webpack-env"
-        ]
+      "target": "esnext",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react-jsx"
     },
-    "include": ["src/**/*", "postcss.config.js", "jest-setup.ts"],
-    "exclude": ["node_modules/**/*", "staticfiles/**/*", "frontend/dist/**/*"]
-}
+    "include": [
+      "src"
+    ],
+    "exclude": ["node_modules"]
+  }

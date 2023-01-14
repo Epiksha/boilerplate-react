@@ -1,9 +1,19 @@
-import props from './props';
+import React from "react";
+import classNames from "classnames";
 
-export const Icon = ({ classes, name }: props): JSX.Element => (
+import { IBaseProps } from "../../types/component.type";
+
+export interface IIconProps extends IBaseProps {
+    name: string;
+};
+
+export const Icon: React.FC<IIconProps> = ({
+    className,
+    name,
+}) => (
     <div
+        className={classNames("icon", className)}
         data-testid="icon"
-        className={`icon${classes ? ` ${classes}` : ''}`}
     >
         <svg>
             <use href={`#${name}`} />

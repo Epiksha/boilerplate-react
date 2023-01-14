@@ -1,7 +1,0 @@
-@use '../settings/main' as settings;
-@use '~sass-utilizer/utilizer';
-
-@include utilizer.render(
-    settings.$utilities,
-    ( breakpoints: settings.$breakpoints )
-);

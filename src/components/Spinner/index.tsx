@@ -1,13 +1,15 @@
-import Icon from '../Icon';
+import React from "react";
 
-export const Spinner = (): JSX.Element => (
+import Icon from "../Icon";
+
+export const Spinner: React.FC = () => (
     <div
         data-testid="spinner"
         className="spinner"
     >
         <Icon
             name="icon-spinner"
-            classes="icon--spinner"
+            className="icon--spinner"
         />
     </div>
 );

@@ -1,19 +1,19 @@
-import ReactDOM from 'react-dom' ;
-import { Provider } from 'react-redux';
+import React from "react";
+import { createRoot } from "react-dom/client" ;
 
-import App from './App/App';
-import store from './store';
-import './scss/entry.scss';
+import App from "./App/App";
+import "./scss/entry.scss";
 
 // Imports SVGs so webpack loaders generate spritesheet
-const svgs = require.context('./assets/icons/', true, /\.svg$/);
+const svgs = require.context("./assets/icons/", true, /\.svg$/);
 svgs.keys().forEach(svgs);
 
-ReactDOM.render(
-    <Provider store={store}>
+const root = createRoot(document.getElementById("root") as HTMLElement);
+
+root.render(
+    <React.StrictMode>
         <App />
-    </Provider>,
-    document.getElementById('root')
+    </React.StrictMode>
 );
 
-document.body.classList.remove('nojs');
+document.body.classList.remove("nojs");

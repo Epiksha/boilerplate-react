@@ -1,47 +1,57 @@
-@use 'sass:list';
-@use 'sass:string';
+@use "sass:list";
+@use "sass:string";
 
 @function add-formatted-source($url, $format, $formattedSources) {
-    $source: list.join((), url($url) format($format), space);
+  $source: list.join((), url($url) format($format), space);
 
-    @if list.length($formattedSources) == 0 {
-        @return list.append($formattedSources, $source);
-    } @else {
-        @return list.append($formattedSources, $source, $separator: comma);
-    }
+  @if list.length($formattedSources)==0 {
+    @return list.append($formattedSources, $source);
+  }
+
+  @else {
+    @return list.append($formattedSources, $source, $separator: comma);
+  }
 }
 
 @mixin import($family, $sources, $style: normal, $weight: 400) {
-    @font-face {
-        font-family: $family;
-        font-style: $style;
-        font-weight: $weight;
-        font-display: swap;
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
 
-        $formattedSources: ();
+    $formattedSources: ();
 
-        @each $source in $sources {
-            $extension: string.slice($source, string.index($source, '.') + 1);
+    @each $source in $sources {
+      $extension: string.slice($source, string.index($source, ".") + 1);
 
-            $sourceString: '../assets/fonts/#{$source}';
-            $format: null;
+      $sourceString: "../assets/fonts/#{$source}";
+      $format: null;
 
-            @if $extension == woff or $extension == woff2 {
-                $format: '#{$extension}';
-            } @else if $extension == otf {
-                $format: 'opentype';
-            } @else if $extension == ttf {
-                $format: 'truetype';
-            } @else if $extension == eot {
-                $format: 'embedded-opentype';
-                $sourceString: $sourceString + '?#iefix';
-            } @else {
-                @error 'import-font: Font extension invalid';
-            }
+      @if $extension==woff or $extension==woff2 {
+        $format: "#{$extension}";
+      }
 
-            $formattedSources: add-formatted-source($sourceString, $format, $formattedSources);
-        }
+      @else if $extension==otf {
+        $format: "opentype";
+      }
 
-        src: $formattedSources;
+      @else if $extension==ttf {
+        $format: "truetype";
+      }
+
+      @else if $extension==eot {
+        $format: "embedded-opentype";
+        $sourceString: $sourceString + "?#iefix";
+      }
+
+      @else {
+        @error "import-font: Font extension invalid";
+      }
+
+      $formattedSources: add-formatted-source($sourceString, $format, $formattedSources);
     }
+
+    src: $formattedSources;
+  }
 }
