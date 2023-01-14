@@ -1,6 +1,7 @@
+import classNames from "classnames";
 import React from "react";
 
-import { IBaseProps } from "../../types/component.type";
+import { IBaseProps } from "@Types/component.type";
 
 export interface IImageProps extends IBaseProps {
     alt?: string;
@@ -17,17 +18,18 @@ export const Image: React.FC<IImageProps> = ({
     external = false,
     id = "",
     src,
+    testId,
 }) => {
     return (
         <img
             id={id}
-            src={external ? src : require(`../../assets/images/${src}`)}
+            src={external ? src : require(`@Images/${src}`)}
             alt={alt ? alt : ""}
             role={alt ? "img" : "presentation"}
-            className={`image${className ? ` ${className}` : ""}`}
+            className={classNames("image", className)}
             aria-labelledby={ariaLabelledBy}
             aria-label={ariaLabel}
-            data-testid="image"
+            data-testid={testId}
         />
     );
 };

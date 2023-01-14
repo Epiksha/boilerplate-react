@@ -18,6 +18,14 @@ module.exports = {
     ],
 
     resolve: {
+        alias: {
+            "@Components": resolve(__dirname, "src/components"),
+            "@Hooks": resolve(__dirname, "src/libs/hooks"),
+            "@Icons": resolve(__dirname, "src/assets/icons"),
+            "@Images": resolve(__dirname, "src/assets/images"),
+            "@Types": resolve(__dirname, "src/types"),
+            "@Variables": resolve(__dirname, "src/libs/variables"),
+        },
         extensions: [".tsx", ".ts", ".js"],
     },
 

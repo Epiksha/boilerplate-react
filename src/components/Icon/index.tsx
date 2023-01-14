@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import { IBaseProps } from "../../types/component.type";
+import { IBaseProps } from "@Types/component.type";
 
 export interface IIconProps extends IBaseProps {
     name: string;
@@ -9,11 +9,12 @@ export interface IIconProps extends IBaseProps {
 
 export const Icon: React.FC<IIconProps> = ({
     className,
+    testId,
     name,
 }) => (
     <div
         className={classNames("icon", className)}
-        data-testid="icon"
+        data-testid={testId}
     >
         <svg>
             <use href={`#${name}`} />

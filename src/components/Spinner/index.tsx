@@ -1,11 +1,16 @@
+import classNames from "classnames";
 import React from "react";
 
+import { IBaseProps } from "@Types/component.type";
 import Icon from "../Icon";
 
-export const Spinner: React.FC = () => (
+export const Spinner: React.FC<IBaseProps> = ({
+    className,
+    testId,
+}) => (
     <div
-        data-testid="spinner"
-        className="spinner"
+        data-testid={testId}
+        className={classNames("spinner", className)}
     >
         <Icon
             name="icon-spinner"

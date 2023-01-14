@@ -7,7 +7,7 @@ describe("Image component", () => {
     let imageElement: Element;
 
     beforeEach(() => {
-        render(<Image src="react.png" />);
+        render(<Image src="react.png" testId="image" />);
 
         imageElement = screen.getByTestId("image");
     });

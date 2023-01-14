@@ -1,27 +1,35 @@
 {
     "compilerOptions": {
-      "target": "esnext",
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "esModuleInterop": true,
+      "isolatedModules": true,
+      "forceConsistentCasingInFileNames": true,
+      "jsx": "react-jsx",
       "lib": [
         "dom",
         "dom.iterable",
         "esnext"
       ],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noFallthroughCasesInSwitch": true,
       "module": "esnext",
       "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
       "noEmit": true,
-      "jsx": "react-jsx"
+      "noFallthroughCasesInSwitch": true,
+      "paths": {
+        "@Components/*": ["src/components/*"],
+        "@Hooks/*": ["src/libs/hooks/*"],
+        "@Icons/*": ["src/assets/icons/*"],
+        "@Images/*": ["src/assets/images/*"],
+        "@Types/*": ["src/types/*"],
+        "@Variables/*": ["src/libs/variables/*"]
+      },
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strict": true,
+      "target": "esnext"
     },
-    "include": [
-      "src"
-    ],
+    "include": ["src"],
     "exclude": ["node_modules"]
   }

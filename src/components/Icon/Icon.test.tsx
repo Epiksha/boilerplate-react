@@ -7,7 +7,7 @@ describe("Icon component", () => {
     let iconElement: HTMLElement;
 
     beforeEach(() => {
-        render(<Icon name="icon-email" />);
+        render(<Icon name="icon-email" testId="icon" />);
         iconElement = screen.getByTestId("icon");
     });
 
