@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 
-import { IBaseProps } from "@Types/component.type";
+import { IBaseProps } from "@Types/component";
 import Icon from "../Icon";
 
 export const Spinner: React.FC<IBaseProps> = ({

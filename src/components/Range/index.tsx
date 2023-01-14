@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 
-import { IBaseProps } from "@Types/component.type";
+import { IBaseProps } from "@Types/component";
 
 export interface IRangeProps extends IBaseProps {
     handler: (value: number) => void,

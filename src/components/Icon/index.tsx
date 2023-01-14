@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import { IBaseProps } from "@Types/component.type";
+import { IBaseProps } from "@Types/component";
 
 export interface IIconProps extends IBaseProps {
     name: string;
