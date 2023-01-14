@@ -1,11 +1,10 @@
+import classNames from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 
-export interface IRangeProps {
-    ariaLabel?: string,
-    ariaLabelledBy?: string,
-    classes?: string,
+import { IBaseProps } from "../../types/component.type";
+
+export interface IRangeProps extends IBaseProps {
     handler: (value: number) => void,
-    id?: string,
     max?: number,
     min?: number,
     step?: number,
@@ -13,14 +12,15 @@ export interface IRangeProps {
 };
 
 export const Range: React.FC<IRangeProps> = ({
-    ariaLabel = "",
-    ariaLabelledBy = "",
-    classes = "",
+    ariaLabel,
+    ariaLabelledBy,
+    className,
     handler,
-    id = "",
+    id,
     max = 100,
     min = 0,
     step = 0.1,
+    testId,
     value,
 }) => {
     const [backgroundImage, setBackgroundImage] = useState("");
@@ -59,7 +59,7 @@ export const Range: React.FC<IRangeProps> = ({
 
     return (
         <input
-            className={`range${classes ? ` ${classes}` : ""}`}
+            className={classNames("range", className)}
             type="range"
             ref={sliderRef}
             id={id}
@@ -70,7 +70,7 @@ export const Range: React.FC<IRangeProps> = ({
             style={{backgroundImage: backgroundImage}}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy}
-            data-test-id="range"
+            data-testid={testId}
             onInput={(event) => handler(Number((event.target as HTMLInputElement).value))}
         />
     );

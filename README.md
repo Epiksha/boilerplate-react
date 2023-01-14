@@ -19,4 +19,8 @@ Components can be found in `src/components` and follow the general structure:
 
 ## Getting Started
 
-* Run `npm run setup && npm start` to begin running the application.
+* Run `npm run setup` to install all dependencies
+* Run `npx husky install` to enable Git hooks
+* Run `npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'` to add linting for your hooks (CommitLint is already configured in this project)
+* Run `npm start` to build you development environment
+* Run `npm build` to create a `dist` folder
