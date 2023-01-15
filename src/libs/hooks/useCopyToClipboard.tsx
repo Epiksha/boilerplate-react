@@ -1,37 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export default (resetInterval: number = 0) => {
-    const [isCopied, setCopied] = React.useState<boolean>(false);
+interface IUseCopyToClipboardProps {
+    onCopy?: (value: string) => void,
+    onError?: (value: string) => void,
+}
+
+const useCopyToClipboard = ({
+    onCopy,
+    onError,
+}: IUseCopyToClipboardProps) => {
+    const [clipboardValue, setClipboardValue] = React.useState<string>("");
     const [error, setError] = React.useState<string>("");
 
-    const handleCopy = (text: string) => {
+    const triggerCopy = (text: string) => {
         if (typeof text === "string" || typeof text == "number") {
             navigator.clipboard.writeText(text.toString())
                 .then(() => {
-                    setCopied(true);
+                    setClipboardValue(text.toString());
                     setError("");
                 });
         } else {
-            setCopied(false);
+            setClipboardValue("");
             setError("Cannot copy to clipboard, must be a string or number.");
         }
     };
 
-    React.useEffect(() => {
-        let timeout: ReturnType<typeof setTimeout>;
-
-        if (isCopied && resetInterval) {
-            timeout = setTimeout(() => setCopied(false), resetInterval);
+    useEffect(() => {
+        if (onCopy) {
+            onCopy(clipboardValue);
         }
+    }, [clipboardValue, onCopy]);
 
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, [isCopied, resetInterval]);
+    useEffect(() => {
+        if (onError) {
+            onError(error);
+        }
+    }, [error, onError]);
 
-    return {
-        isCopied,
-        handleCopy,
-        error,
-    };
+    return triggerCopy;
 };
+
+export default useCopyToClipboard;

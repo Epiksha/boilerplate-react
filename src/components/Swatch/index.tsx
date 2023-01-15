@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
 
 import { IBaseProps } from "@Types/component";
@@ -10,6 +10,8 @@ export interface ISwatchProps extends IBaseProps {
     hex: string;
     varReference: string;
     name: string;
+    onCopy?: (value: string) => void;
+    onError?: (value: string) => void;
 }
 
 const Swatch: React.FC<ISwatchProps> = ({
@@ -17,15 +19,20 @@ const Swatch: React.FC<ISwatchProps> = ({
     hex,
     id,
     name,
+    onCopy,
+    onError,
     testId,
     varReference,
 }) => {
     const generatedId = generateId();
 
-    const { handleCopy } = useCopyToClipboard();
+    const triggerCopy = useCopyToClipboard({
+        onCopy,
+        onError,
+    });
 
     const copyToClipboard = async () => {
-        handleCopy(hex);
+        triggerCopy(hex);
     };
 
     return (

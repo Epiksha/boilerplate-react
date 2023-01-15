@@ -142,7 +142,7 @@ export const Styleguide: React.FC = () => {
                         defaultId="radio-two"
                         radios={radios}
                         isDisabled={true}
-                        group="styleguide-radios"
+                        group="styleguide-radios-disabled"
                         onChange={radiosChange}
                     />
                 </div>
