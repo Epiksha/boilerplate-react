@@ -1,0 +1,32 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+.date-input {
+    position: relative;
+
+    width: 100%;
+    max-width: 35rem;
+
+    &.date-input--focused {
+        .icon--date {
+            color: $color-2;
+        }
+
+        input {
+            border-color: $color-2;
+            color: $color-2;
+        }
+    }
+
+    .icon--date {
+        @include icon-dimensions(2.4rem);
+
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        color: $color-1;
+    }
+}

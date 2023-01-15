@@ -12,6 +12,9 @@ import Swatch from "@Components/Swatch";
 import { MessageLevel } from "@Types/message";
 import Toaster from "@Components/Toaster";
 import { Link } from "react-router-dom";
+import Chips from "@Components/Chips";
+import { IOption } from "@Types/component";
+import DateInput from "@Components/DateInput";
 
 export const Styleguide: React.FC = () => {
     const [checkboxes, setCheckboxes] = useState([
@@ -54,7 +57,26 @@ export const Styleguide: React.FC = () => {
         },
     ]);
 
+    const [chips, setChips] = useState<IOption[]>([
+        {
+            value: "chip-one",
+            label: "Chip One",
+            isSelected: false,
+        },
+        {
+            value: "chip-two",
+            label: "Chip Two",
+            isSelected: false,
+        },
+        {
+            value: "chip-three",
+            label: "Chip Three",
+            isSelected: false,
+        },
+    ]);
+
     const [rangeValue, setRangeValue] = useState<number>(50);
+    const [currentDate, setCurrentData] = useState<Date | string>(new Date());
 
     const [toasterMessageLevel, setToasterMessageLevel] = useState<`${MessageLevel}`>(MessageLevel.Error);
     const [toasterMessage, setToasterMessage] = useState<string>("");
@@ -101,6 +123,22 @@ export const Styleguide: React.FC = () => {
         setRangeValue(value);
     };
 
+    const handleChipChange = (option: IOption) => {
+        const newChips = chips.map(chip => {
+            if (chip.value === option.value) {
+                chip.isSelected = !chip.isSelected;
+            }
+
+            return chip;
+        });
+
+        setChips(newChips);
+    };
+
+    const handleDateChange = (date: Date) => {
+        setCurrentData(date);
+    };
+
     return (
         <main className="styleguide">
             <h1>Styleguide</h1>
@@ -142,6 +180,15 @@ export const Styleguide: React.FC = () => {
             </section>
 
             <section className="styleguide__section">
+                <h2>Chips</h2>
+
+                <Chips
+                    onChange={handleChipChange}
+                    options={chips}
+                />
+            </section>
+
+            <section className="styleguide__section">
                 <h2>Icons</h2>
 
                 <div className="styleguide__icons">
@@ -149,6 +196,14 @@ export const Styleguide: React.FC = () => {
                     <Icon name="checkmark" />
                     <Icon name="close" />
                     <Icon name="spinner" />
+                </div>
+            </section>
+
+            <section className="styleguide__section">
+                <h2>Inputs</h2>
+
+                <div className="styleguide__inputs">
+                    <DateInput value={currentDate} onChange={handleDateChange} />
                 </div>
             </section>
 

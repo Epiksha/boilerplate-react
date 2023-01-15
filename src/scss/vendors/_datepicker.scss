@@ -1,0 +1,126 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+/* purgecss start ignore */
+.react-datepicker {
+    &-wrapper {
+        flex-grow: 1;
+    }
+
+    &__header {
+        padding: 0;
+    }
+
+    &__day-names {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        text-align: center;
+
+        padding: 1rem 2rem;
+
+        background-color: $color-2;
+    }
+
+    &__day-name {
+        min-width: 3.7rem;
+        margin: 0;
+        padding: 0;
+
+        color: $color-white;
+
+        font-size: 1.6rem;
+    }
+
+    &__current-month {
+        padding: 1.5rem 3rem;
+
+        background-color: $color-1;
+        color: $color-white;
+
+        font-size: 1.8rem;
+    }
+
+    &__input-container > input {
+        display: block;
+
+        width: 100%;
+        padding: 1rem 2rem 1rem 4.4rem;
+        border: solid 0.4rem $color-1;
+        border-radius: 0.5rem;
+
+        color: $color-1;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        &:focus-visible {
+            color: $color-2;
+            border-color: $color-2;
+
+            outline: solid 0.4rem $color-3;
+        }
+    }
+
+    &__tab-loop {
+        width: 100%;
+    }
+
+    &-popper {
+        width: 100%;
+    }
+
+    &__triangle {
+        display: none;
+    }
+
+    &__month {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        margin: 0.7rem 0 0;
+        padding: 1rem 2rem;
+        background-color: $color-white;
+    }
+
+    &__week {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__day {
+        min-width: 3.7rem;
+        padding: 1rem 0;
+        border-radius: 50%;
+
+        font-size: 1.6rem;
+
+        &--selected {
+            background-color: $color-2;
+        }
+
+        &--keyboard-selected {
+            background: transparent;
+            color: $color-black;
+        }
+    }
+
+    &__navigation {
+        top: 1rem;
+
+        &--previous {
+            left: 1rem;
+        }
+
+        &--next {
+            right: 1rem;
+        }
+
+        &-icon:before {
+            border-color: $color-white;
+        }
+    }
+}
+/* purgecss end ignore */

@@ -1,0 +1,51 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+.chips {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+  
+    padding: 0;
+
+    list-style: none;
+
+    &__button {
+        padding: 1rem 2rem;
+        border: solid 0.4rem $color-1;
+        border-radius: 100vw;
+
+        background-color: transparent;
+        color: $color-1;
+        box-shadow: $box-shadow-2;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        cursor: pointer;
+        transition: background-color 250ms, color 250ms, border-color 250ms, transform 250ms;
+
+        &:hover {
+            color: $color-2;
+            border-color: $color-2;
+            transform: translate(-0.2rem, -0.2rem);
+        }
+
+        &--active {
+            background-color: $color-2;
+            color: $color-white;
+            border-color: $color-2;
+
+            &:hover {
+                background-color: $color-2;
+                border-color: $color-2;
+                color: $color-white;
+            }
+        }
+
+        &:focus-visible {
+            outline: solid 0.4rem $color-3;
+        }
+    }
+}

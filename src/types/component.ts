@@ -6,3 +6,9 @@ export interface IBaseProps {
     id?: string;
     testId?: string;
 };
+
+export interface IOption {
+    isSelected: boolean;
+    label: string;
+    value: string;
+};

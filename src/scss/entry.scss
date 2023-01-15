@@ -1,6 +1,7 @@
 @use "animations";
 @use "layout";
 @use "typography";
+@use "vendors";
 
 @use "../components/Icon/icon";
 @use "../components/Image/image";
@@ -11,6 +12,8 @@
 @use "../components/Radios/radios";
 @use "../components/Swatch/swatch";
 @use "../components/Toaster/toaster";
+@use "../components/Chips/chips";
+@use "../components/DateInput/date-input";
 // Append component here
 
 
