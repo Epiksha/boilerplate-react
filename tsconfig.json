@@ -17,27 +17,14 @@
         "noEmit": true,
         "noFallthroughCasesInSwitch": true,
         "paths": {
-            "@Components/*": [
-                "src/components/*"
-            ],
-            "@Hooks/*": [
-                "src/libs/hooks/*"
-            ],
-            "@Icons/*": [
-                "src/assets/icons/*"
-            ],
-            "@Images/*": [
-                "src/assets/images/*"
-            ],
-            "@Types/*": [
-                "src/types/*"
-            ],
-            "@Utilities/*": [
-                "src/libs/utilities/*"
-            ],
-            "@Variables/*": [
-                "src/libs/variables/*"
-            ]
+            "@Components/*": ["src/components/*"],
+            "@Config/*": ["src/libs/config/*"],
+            "@Hooks/*": ["src/libs/hooks/*"],
+            "@Icons/*": ["src/assets/icons/*"],
+            "@Images/*": ["src/assets/images/*"],
+            "@Types/*": ["src/types/*"],
+            "@Utilities/*": ["src/libs/utilities/*"],
+            "@Variables/*": ["src/libs/variables/*" ]
         },
         "resolveJsonModule": true,
         "skipLibCheck": true,

@@ -20,6 +20,7 @@ module.exports = {
     resolve: {
         alias: {
             "@Components": resolve(__dirname, "src/components"),
+            "@Config": resolve(__dirname, "src/libs/config"),
             "@Hooks": resolve(__dirname, "src/libs/hooks"),
             "@Icons": resolve(__dirname, "src/assets/icons"),
             "@Images": resolve(__dirname, "src/assets/images"),

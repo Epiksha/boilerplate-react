@@ -11,6 +11,7 @@ import { Colors } from "@Variables/colors";
 import Swatch from "@Components/Swatch";
 import { MessageLevel } from "@Types/message";
 import Toaster from "@Components/Toaster";
+import { Link } from "react-router-dom";
 
 export const Styleguide: React.FC = () => {
     const [checkboxes, setCheckboxes] = useState([
@@ -103,6 +104,8 @@ export const Styleguide: React.FC = () => {
     return (
         <main className="styleguide">
             <h1>Styleguide</h1>
+
+            <Link to="/">Back To Home</Link>
 
             <Toaster
                 message={toasterMessage}
