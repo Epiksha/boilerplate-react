@@ -38,6 +38,11 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.[jt]sx?$/,
+                loader: "react-hot-loader/webpack",
+                include: /node_modules/,
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 type: "asset/resource",
                 include: [resolve(__dirname, "src/assets/images")],
