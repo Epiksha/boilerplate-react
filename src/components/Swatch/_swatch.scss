@@ -1,0 +1,27 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+.swatch {
+    &__preview {
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+
+    &__description {
+        display: grid;
+        gap: 0.5rem;
+        text-align: center;
+
+        margin-top: 2rem;
+    }
+
+    &__label {
+        margin: 0;
+
+        &--main {
+            padding-bottom: 0.5rem;
+
+            font-weight: 500;
+        }
+    }
+}

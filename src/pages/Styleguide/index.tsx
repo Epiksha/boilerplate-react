@@ -7,6 +7,8 @@ import Spinner from "@Components/Spinner";
 import Range from "@Components/Range";
 import Icon from "@Components/Icon";
 import Radios from "@Components/Radios";
+import { Colors } from "@Variables/colors";
+import Swatch from "@Components/Swatch";
 
 export const Styleguide: React.FC = () => {
     const [checkboxes, setCheckboxes] = useState([
@@ -80,6 +82,21 @@ export const Styleguide: React.FC = () => {
     return (
         <main className="styleguide">
             <h1>Styleguide</h1>
+
+            <section className="styleguide__section">
+                <h2>Colors</h2>
+
+                <div className="styleguide__colors">
+                    {Object.keys(Colors).map(key => (
+                        <Swatch
+                            name={key}
+                            key={Colors[key].hex}
+                            varReference={Colors[key].varReference}
+                            hex={Colors[key].hex}
+                        />
+                    ))}
+                </div>
+            </section>
 
             <section className="styleguide__section">
                 <Checkboxes
