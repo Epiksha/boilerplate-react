@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 
 interface IUseCopyToClipboardProps {
-    onCopy?: (value: string) => void,
-    onError?: (value: string) => void,
+    onCopy?: (value: string) => void;
+    onError?: (value: string) => void;
+    refreshDelay?: number;
 }
 
 const useCopyToClipboard = ({
     onCopy,
     onError,
+    refreshDelay = 500
 }: IUseCopyToClipboardProps) => {
     const [clipboardValue, setClipboardValue] = React.useState<string>("");
     const [error, setError] = React.useState<string>("");
@@ -21,21 +23,29 @@ const useCopyToClipboard = ({
                 });
         } else {
             setClipboardValue("");
-            setError("Cannot copy to clipboard, must be a string or number.");
+            setError("Must be a string or number.");
         }
     };
 
     useEffect(() => {
-        if (onCopy) {
+        if (onCopy && clipboardValue) {
             onCopy(clipboardValue);
+
+            setTimeout(() => {
+                setClipboardValue("");
+            }, refreshDelay);
         }
-    }, [clipboardValue, onCopy]);
+    }, [clipboardValue]);
 
     useEffect(() => {
-        if (onError) {
+        if (onError && error) {
             onError(error);
+
+            setTimeout(() => {
+                setError("");
+            }, refreshDelay);
         }
-    }, [error, onError]);
+    }, [error]);
 
     return triggerCopy;
 };

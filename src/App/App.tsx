@@ -9,7 +9,7 @@ export function _App(): JSX.Element {
         <BrowserRouter>
             <Routes>
                 {routes?.map((route: IRoute) => (
-                    <Route {...route} />
+                    <Route key={route.path} {...route} />
                 ))}
             </Routes>
         </BrowserRouter>

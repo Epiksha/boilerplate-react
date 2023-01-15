@@ -9,6 +9,8 @@ import Icon from "@Components/Icon";
 import Radios from "@Components/Radios";
 import { Colors } from "@Variables/colors";
 import Swatch from "@Components/Swatch";
+import { MessageLevel } from "@Types/message";
+import Toaster from "@Components/Toaster";
 
 export const Styleguide: React.FC = () => {
     const [checkboxes, setCheckboxes] = useState([
@@ -53,6 +55,25 @@ export const Styleguide: React.FC = () => {
 
     const [rangeValue, setRangeValue] = useState<number>(50);
 
+    const [toasterMessageLevel, setToasterMessageLevel] = useState<`${MessageLevel}`>(MessageLevel.Error);
+    const [toasterMessage, setToasterMessage] = useState<string>("");
+    const [isToasterVisible, setIsToasterVisible] = useState<boolean>(false);
+    const [toasterId, setToasterId] = useState<string>("");
+
+    const onSwatchCopy = (value: string) => {
+        setToasterMessageLevel(MessageLevel.Success);
+        setToasterMessage("Copied to clipboard.");
+        setIsToasterVisible(true);
+        setToasterId(value);
+    };
+
+    const onSwatchError = (value: string) => {
+        setToasterMessageLevel(MessageLevel.Error);
+        setToasterMessage("Failed to copy to clipboard.");
+        setIsToasterVisible(true);
+        setToasterId(value);
+    };
+
     const checkboxChange = (event: ChangeEvent<HTMLInputElement>) => {
         setCheckboxes(checkboxes.map(checkbox => {
             if (checkbox.id === event.target.id) {
@@ -83,6 +104,14 @@ export const Styleguide: React.FC = () => {
         <main className="styleguide">
             <h1>Styleguide</h1>
 
+            <Toaster
+                message={toasterMessage}
+                type={toasterMessageLevel}
+                isVisible={isToasterVisible}
+                setIsVisible={setIsToasterVisible}
+                id={toasterId}
+            />
+
             <section className="styleguide__section">
                 <h2>Colors</h2>
 
@@ -93,6 +122,8 @@ export const Styleguide: React.FC = () => {
                             key={Colors[key].hex}
                             varReference={Colors[key].varReference}
                             hex={Colors[key].hex}
+                            onCopy={onSwatchCopy}
+                            onError={onSwatchError}
                         />
                     ))}
                 </div>

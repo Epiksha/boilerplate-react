@@ -14,6 +14,12 @@ $color-gray-5: #808080;
 $color-gray-6: #383838;
 $color-white: #ffffff;
 
+// Semantic
+$color-success: #47D764;
+$color-error: #FF355B;
+$color-info: #2F86EB;
+$color-warning: #FFC021;
+
 // Box Shadow
 $box-shadow-1: 0.2rem 0.2rem 1rem 0.2rem color.adjust($color-black, $alpha: -0.9);
 $box-shadow-2: 0 0.4rem 0.8rem 0 color.adjust($color-black, $alpha: -0.8);

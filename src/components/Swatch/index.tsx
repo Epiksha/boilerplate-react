@@ -33,7 +33,7 @@ const Swatch: React.FC<ISwatchProps> = ({
             className={classNames("swatch", className)}
             data-testid={testId}
         >
-            <div className="swatch__preview" style={{ backgroundColor: hex }} aria-labelledBy={id ?? generatedId}>
+            <div className="swatch__preview" style={{ backgroundColor: hex }} aria-labelledby={id ?? generatedId}>
                 <button
                     className="swatch__copy"
                     onClick={() => triggerCopy(hex)}
