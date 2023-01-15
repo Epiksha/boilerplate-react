@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 
 import { IBaseProps } from "@Types/component";
@@ -26,14 +26,7 @@ const Swatch: React.FC<ISwatchProps> = ({
 }) => {
     const generatedId = generateId();
 
-    const triggerCopy = useCopyToClipboard({
-        onCopy,
-        onError,
-    });
-
-    const copyToClipboard = async () => {
-        triggerCopy(hex);
-    };
+    const triggerCopy = useCopyToClipboard({ onCopy, onError });
 
     return (
         <div
@@ -43,7 +36,7 @@ const Swatch: React.FC<ISwatchProps> = ({
             <div className="swatch__preview" style={{ backgroundColor: hex }} aria-labelledBy={id ?? generatedId}>
                 <button
                     className="swatch__copy"
-                    onClick={copyToClipboard}
+                    onClick={() => triggerCopy(hex)}
                     aria-label="Copy to clipboard"
                 >
                     <span>{hex}</span>
