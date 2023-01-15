@@ -4,11 +4,13 @@ export default (resetInterval: number = 0) => {
     const [isCopied, setCopied] = React.useState<boolean>(false);
     const [error, setError] = React.useState<string>("");
 
-    const handleCopy = async (text: string) => {
+    const handleCopy = (text: string) => {
         if (typeof text === "string" || typeof text == "number") {
-            await navigator.clipboard.writeText(text.toString());
-            setCopied(true);
-            setError("");
+            navigator.clipboard.writeText(text.toString())
+                .then(() => {
+                    setCopied(true);
+                    setError("");
+                });
         } else {
             setCopied(false);
             setError("Cannot copy to clipboard, must be a string or number.");
@@ -27,5 +29,9 @@ export default (resetInterval: number = 0) => {
         };
     }, [isCopied, resetInterval]);
 
-    return [isCopied, handleCopy, error];
+    return {
+        isCopied,
+        handleCopy,
+        error,
+    };
 };

@@ -1,10 +1,44 @@
+@use "sass:color";
+
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
 
 .swatch {
     &__preview {
+        overflow: hidden;
         aspect-ratio: 1;
         border-radius: 50%;
+    }
+
+    &__copy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+
+        background-color: color.adjust($color-black, $alpha: -0.2);
+        color: $color-white;
+        opacity: 0;
+
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        cursor: pointer;
+        transition: opacity 250ms;
+
+        &:hover, &:focus-visible {
+            opacity: 1;
+        }
+
+        .icon--swatch {
+            @include icon-dimensions(2.4rem);
+            color: currentColor;
+        }
     }
 
     &__description {
