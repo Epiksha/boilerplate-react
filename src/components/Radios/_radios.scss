@@ -1,0 +1,147 @@
+@use "sass:color";
+
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+.radios {
+    &__label {
+        margin-bottom: 2rem;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        transform: translateX(-0.4rem);
+
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .radio {
+        display: inline-flex;
+        align-items: center;
+        gap: 2rem;
+
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: none;
+
+        &--disabled {
+            color: $color-gray-5;
+            cursor: not-allowed;
+        }
+
+        &:hover:not(.radio--disabled) {
+            cursor: pointer;
+        }
+
+        input[type=radio] {
+            appearance: none;
+
+            position: relative;
+            transform: translate(-2%, -2%);
+
+            box-sizing: border-box;
+            width: 4rem;
+            height: 4rem;
+            background-color: $color-white;
+            border: solid 0.4rem $color-1;
+            border-radius: 50%;
+
+            background-image: linear-gradient(
+                to bottom right,
+                color.adjust($color-black, $alpha: -0.9) 10%,
+                color.adjust($color-white, $alpha: -0.1),
+            );
+            box-shadow:
+                $box-shadow-1,
+                -0.4rem -0.4rem 1rem 0 $color-white,
+                0.4rem 0.4rem 1rem 0.04rem color.adjust($color-black, $alpha: -0.8),
+                inset 0.1rem 0.1rem 0.3rem 0 color.adjust($color-black, $alpha: -0.9),
+                inset -0.1rem -0.1rem 0.3rem 0 color.adjust($color-black, $alpha: -0.9);
+
+            cursor: pointer;
+            transition: transform 250ms, border-color 250ms;
+
+            &::after {
+                content: "";
+                display: block;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                width: 55%;
+                height: 55%;
+                border-radius: 50%;
+
+                opacity: 0;
+                background-color: $color-2;
+
+                transition: all 250ms;
+            }
+
+            &:focus-visible {
+                outline: solid 0.4rem $color-3;
+            }
+
+            &:hover:not(:disabled) {
+                transform: translate(-5%, -5%);
+
+                border: solid 0.4rem $color-2;
+
+                cursor: pointer;
+
+                &:after {
+                    background-color: $color-2;
+                }
+
+                ~ .radio__label {
+                    color: $color-2;
+                }
+            }
+
+            &:checked {
+                &:not(:disabled) {
+                    transform: translate(-2%, -2%);
+
+                    border: solid 0.4rem $color-2;
+                }
+
+                &:after {
+                    color: $color-2;
+
+                    opacity: 1;
+                }
+            }
+
+            &:disabled {
+                border-color: $color-gray-4;
+
+                cursor: not-allowed;
+
+                &::after {
+                    background-color: $color-gray-4;
+                }
+
+                &:hover {
+                    .radio__label {
+                        color: $color-gray-5;
+                    }
+                }
+            }
+        }
+
+        &__label {
+            transition: color 250ms;
+
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+    }
+}

@@ -28,4 +28,15 @@
         display: flex;
         gap: 2rem;
     }
+
+    &__radios {
+        display: grid;
+        gap: 2rem;
+        align-items: end;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+    }
 }

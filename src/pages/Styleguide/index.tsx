@@ -6,6 +6,7 @@ import Image from "@Components/Image";
 import Spinner from "@Components/Spinner";
 import Range from "@Components/Range";
 import Icon from "@Components/Icon";
+import Radios from "@Components/Radios";
 
 export const Styleguide: React.FC = () => {
     const [checkboxes, setCheckboxes] = useState([
@@ -30,6 +31,24 @@ export const Styleguide: React.FC = () => {
         },
     ]);
 
+    const [radios, setRadios] = useState([
+        {
+            id: "radio-one",
+            label: "Radio One",
+            isSelected: true,
+        },
+        {
+            id: "radio-two",
+            label: "Radio Two",
+            isSelected: false,
+        },
+        {
+            id: "radio-three",
+            label: "Radio Three",
+            isSelected: false,
+        },
+    ]);
+
     const [rangeValue, setRangeValue] = useState<number>(50);
 
     const checkboxChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +58,18 @@ export const Styleguide: React.FC = () => {
             }
 
             return checkbox;
+        }));
+    };
+
+    const radiosChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setRadios(radios.map(radio => {
+            if (radio.id === event.target.id) {
+                radio.isSelected = true;
+            } else {
+                radio.isSelected = false;
+            }
+
+            return radio;
         }));
     };
 
@@ -78,6 +109,27 @@ export const Styleguide: React.FC = () => {
                     <Image src="react.png" />
                 </div>
             </section>
+
+            <div className="styleguide__section">
+                <div className="styleguide__radios">
+                    <Radios
+                        defaultId="radio-two"
+                        radios={radios}
+                        label="Radios"
+                        headingType={Heading.Two}
+                        group="styleguide-radios"
+                        onChange={radiosChange}
+                    />
+
+                    <Radios
+                        defaultId="radio-two"
+                        radios={radios}
+                        isDisabled={true}
+                        group="styleguide-radios"
+                        onChange={radiosChange}
+                    />
+                </div>
+            </div>
 
             <section className="styleguide__section">
                 <h2>Range</h2>
