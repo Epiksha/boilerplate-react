@@ -1,0 +1,13 @@
+.checkboxes {
+    &__label {
+        margin-bottom: 2rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        padding-left: 0;
+    }
+}

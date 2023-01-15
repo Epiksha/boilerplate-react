@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React, { useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 
 import { IBaseProps } from "@Types/component";
 
 export interface IRangeProps extends IBaseProps {
-    handler: (value: number) => void,
+    onChange: (value: number) => void,
     max?: number,
     min?: number,
     step?: number,
@@ -15,7 +15,7 @@ export const Range: React.FC<IRangeProps> = ({
     ariaLabel,
     ariaLabelledBy,
     className,
-    handler,
+    onChange,
     id,
     max = 100,
     min = 0,
@@ -52,10 +52,14 @@ export const Range: React.FC<IRangeProps> = ({
 
     useEffect(() => {
         const rangeValue = Number(((sliderRef.current as unknown) as HTMLInputElement).value);
-        handler(rangeValue);
+        onChange(rangeValue);
 
         buildGradient();
     }, [value]);
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        onChange(Number(event.target.value));
+    };
 
     return (
         <input
@@ -67,11 +71,11 @@ export const Range: React.FC<IRangeProps> = ({
             min={min}
             max={max}
             step={step}
-            style={{backgroundImage: backgroundImage}}
+            style={{ backgroundImage: backgroundImage }}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy}
             data-testid={testId}
-            onInput={(event) => handler(Number((event.target as HTMLInputElement).value))}
+            onChange={handleChange}
         />
     );
 };

@@ -1,3 +1,6 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
 .spinner {
     display: inline-block;
 

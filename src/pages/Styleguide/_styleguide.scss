@@ -1,0 +1,31 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.styleguide {
+    &__section {
+        margin-top: 2rem;
+
+        @include tablet {
+            margin-top: 4rem;
+        }
+    }
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    &__images {
+        display: grid;
+        gap: 2rem;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        gap: 2rem;
+    }
+}

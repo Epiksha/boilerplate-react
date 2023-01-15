@@ -7,7 +7,7 @@ describe("range component", () => {
     let rangeElement: Element;
 
     beforeEach(() => {
-        render(<Range testId="range" value={50} handler={() => {}} />);
+        render(<Range testId="range" value={50} handler={() => { }} />);
 
         rangeElement = screen.getByTestId("range");
     });

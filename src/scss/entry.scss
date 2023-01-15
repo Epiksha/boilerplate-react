@@ -1,5 +1,4 @@
 @use "animations";
-@use "global";
 @use "layout";
 @use "typography";
 
@@ -7,9 +6,12 @@
 @use "../components/Image/image";
 @use "../components/Range/range";
 @use "../components/Spinner/spinner";
+@use "../components/Checkboxes/checkboxes";
+@use "../components/Checkboxes/Checkbox/checkbox";
 // Append component here
 
 
 @use "../pages/Home/home";
 @use "../pages/NotFound/not-found";
+@use "../pages/Styleguide/styleguide";
 // Append page here

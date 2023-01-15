@@ -4,21 +4,21 @@ import classNames from "classnames";
 import { IBaseProps } from "@Types/component";
 
 interface I{{pascalCase name}}Props extends IBaseProps {
-  myProp?: string;
+    myProp?: string;
 }
 
 const {{pascalCase name}}: React.FC<I{{pascalCase name}}Props> = ({
-  className,
-  testId,
+    className,
+    testId,
 }) => {
-  return (
-    <div
-      className={classNames("{{kebabCase name}}", className)}
-      data-testid={testId}
-    >
-      {{pascalCase name}}
-    </div>
-  );
+    return (
+        <div
+            className={classNames("{{kebabCase name}}", className)}
+            data-testid={testId}
+        >
+            {{pascalCase name}}
+        </div>
+    );
 };
 
 export default {{pascalCase name}};

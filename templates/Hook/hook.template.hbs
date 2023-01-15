@@ -1,11 +1,11 @@
 import React from "react";
 
 export default (arg: unknown) => {
-  const [data, setData] = React.useState<unknown>();
+    const [data, setData] = React.useState<unknown>();
 
-  React.useEffect(() => {
-    setData(arg);
-  }, [arg]);
+    React.useEffect(() => {
+        setData(arg);
+    }, [arg]);
 
-  return [data];
+    return [data];
 };

@@ -13,7 +13,7 @@ export const Spinner: React.FC<IBaseProps> = ({
         className={classNames("spinner", className)}
     >
         <Icon
-            name="icon-spinner"
+            name="spinner"
             className="icon--spinner"
         />
     </div>

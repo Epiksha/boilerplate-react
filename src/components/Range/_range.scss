@@ -1,4 +1,4 @@
-@use "../../scss/mixins" as mixins;
+@use "../../scss/mixins" as *;
 @use "../../scss/variables" as *;
 
 input[type=range] {
@@ -11,7 +11,7 @@ input[type=range] {
     width: 100%;
     height: 100%;
     margin: 0;
-    border-radius: 0;
+    border-radius: 0.5rem;
 
     background-image: linear-gradient(
         to right,
@@ -21,22 +21,22 @@ input[type=range] {
     box-shadow: none;
 
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
     transition: background-image 200ms;
 
     &::-webkit-slider-runnable-track {
-        @include mixins.input-range-track();
+        @include input-range-track();
     }
 
     &::-webkit-slider-thumb {
-        @include mixins.input-range-thumb(transparent);
+        @include input-range-thumb(transparent);
     }
 
     &::-moz-range-track {
-        @include mixins.input-range-track();
+        @include input-range-track();
     }
 
     &::-moz-range-thumb {
-        @include mixins.input-range-thumb(transparent);
+        @include input-range-thumb(transparent);
     }
 }

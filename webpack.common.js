@@ -24,6 +24,7 @@ module.exports = {
             "@Icons": resolve(__dirname, "src/assets/icons"),
             "@Images": resolve(__dirname, "src/assets/images"),
             "@Types": resolve(__dirname, "src/types"),
+            "@Utilities": resolve(__dirname, "src/libs/utilities"),
             "@Variables": resolve(__dirname, "src/libs/variables"),
         },
         extensions: [".tsx", ".ts", ".js"],
@@ -34,7 +35,7 @@ module.exports = {
             {
                 test: /\.[jt]sx?$/,
                 loader: "babel-loader",
-                exclude: /node_modules/, 
+                exclude: /node_modules/,
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
