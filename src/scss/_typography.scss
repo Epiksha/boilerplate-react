@@ -50,5 +50,17 @@ h2 {
 }
 
 a {
+    display: inline-block;
+    margin-top: 2rem;
+
+    color: $color-1;
+
+    font-weight: 500;
+    text-decoration: none;
+
     transition: color $timing-1;
+
+    &:hover {
+        color: $color-2;
+    }
 }

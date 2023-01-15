@@ -18,4 +18,20 @@ export const Colors: IColors = {
         hex: "#7deba0",
         varReference: "$color-3",
     },
+    "Success": {
+        hex: "#47D764",
+        varReference: "$color-success",
+    },
+    "Error": {
+        hex: "#FF355B",
+        varReference: "$color-error",
+    },
+    "Info": {
+        hex: "#2F86EB",
+        varReference: "$color-info",
+    },
+    "Warning": {
+        hex: "#FFC021",
+        varReference: "$color-warning",
+    },
 }
