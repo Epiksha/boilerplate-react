@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import classNames from "classnames";
 
 import { IBaseProps, IOption } from "@Types/component";
@@ -22,7 +22,7 @@ const Chips: React.FC<IChipsProps> = ({
 
     return (
         <ul
-            className="chips"
+            className={classNames("chips", className)}
             data-testid={testId}
         >
             {options.map(option => (
